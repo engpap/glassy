@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: f1b00da79197c5644b542946b9874f4b
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: d892ec9e1a7dc5d45b59b261b5586376
+  - enabled: 0
     path: Assets/NRSDK/Demos/HelloMR.unity
     guid: dd74f1c9685ef48499229d4957b58000
   m_configObjects: {}
