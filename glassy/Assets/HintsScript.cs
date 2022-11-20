@@ -8,12 +8,10 @@ public class HintsScript : MonoBehaviour
     public void showHints(){
         if(obj1.activeSelf){
             obj1.SetActive(false);
-            Debug.Log("disattivato");
         }
         else
         {
             obj1.SetActive(true);
-            Debug.Log("attivato");
         }
     }
 }
