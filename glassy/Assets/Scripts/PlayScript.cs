@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using NRKernal;
 public class PlayScript : MonoBehaviour
 {
     private int count;
@@ -10,11 +11,13 @@ public class PlayScript : MonoBehaviour
     public TMP_Text buttonText;
     public Image image;
     public Sprite lavandula, ginkgo, appleblossom, weepingwillow,magnolia;
+    
     // Start is called before the first frame update
     void Start()
     {
         image.sprite=ginkgo;
         count=0;   
+        
     }
 
     public void UpdateCount(){
