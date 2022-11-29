@@ -16,16 +16,19 @@ public class ChangeCard : MonoBehaviour
     // Evolution Section
     public Button EvolutionButton;
     private bool hasEvolutionButtonClicked = false;
-    //public GameObject BirthPlantModel;
-    //public GameObject MiddleAgePlantModel;
 
-    //public GameObject LateAgePlantModel;
+    public GameObject Model_1;
+    public GameObject Model_2;
+
+    //public GameObject Animation3D;
 
 
     // Health Section
     public Button HealthButton;
     private bool hasHealthButtonClicked = false;
     // TODO: similar to Evolution
+
+    public GameObject ResetItemsButton; // Reset the position of 3D objects
 
     
 
@@ -62,8 +65,6 @@ public class ChangeCard : MonoBehaviour
             setActive_EvolutionFunctionality(hasEvolutionButtonClicked);
             setActive_DetailsFunctionality(false);
             setActive_HealthFunctionality(false);
-            //TODO: similar to Evolution
-
         }
         if(buttonName=="Health"){
             Console.WriteLine("Health button is selected");
@@ -92,9 +93,10 @@ public class ChangeCard : MonoBehaviour
     */
     private void setActive_EvolutionFunctionality(bool state){
         hasEvolutionButtonClicked=state;
-        //BirthPlantModel.gameObject.SetActive(state);
-        //MiddleAgePlantModel.gameObject.SetActive(state);
-        //LateAgePlantModel.gameObject.SetActive(state);
+        Model_1.gameObject.SetActive(state);
+        Model_2.gameObject.SetActive(state);
+        //Animation3D.gameObject.SetActive(state);
+        ResetItemsButton.SetActive(state);
     }
 
 
@@ -104,6 +106,8 @@ public class ChangeCard : MonoBehaviour
     private void setActive_HealthFunctionality(bool state){
         hasHealthButtonClicked=state;
         //TODO: similar to Evolution
+        ResetItemsButton.SetActive(state);
+        
     }
 
 
