@@ -14,7 +14,7 @@ public class ChangeCard : MonoBehaviour
     public Button EtimologyButton;
 
     // Evolution Section
-    public Button EvolutionButton;
+    public  Button EvolutionButton;
     private bool hasEvolutionButtonClicked = false;
 
     public GameObject Model_1;
@@ -28,7 +28,8 @@ public class ChangeCard : MonoBehaviour
     private bool hasHealthButtonClicked = false;
     // TODO: similar to Evolution
 
-    public GameObject ResetItemsButton; // Reset the position of 3D objects
+    // Common button for Evolution and Health sections
+    public Button ResetItemsButton; // Reset the position of 3D objects
 
     
 
@@ -40,6 +41,10 @@ public class ChangeCard : MonoBehaviour
 
         // Hide 3D models that should be activated when Evolution button is clicked
         setActive_EvolutionFunctionality(false);
+
+
+        // Hide 3D models that should be activated when Health button is clicked
+        setActive_HealthFunctionality(false);
 
 
         //---- Add Buttons Listeners
@@ -96,7 +101,7 @@ public class ChangeCard : MonoBehaviour
         Model_1.gameObject.SetActive(state);
         Model_2.gameObject.SetActive(state);
         //Animation3D.gameObject.SetActive(state);
-        ResetItemsButton.SetActive(state);
+        ResetItemsButton.gameObject.SetActive(state); //TO FIX BECAUSE IF U PUT IT ALSO IN HEALTH IT DOES NOT WORK
     }
 
 
@@ -106,14 +111,7 @@ public class ChangeCard : MonoBehaviour
     private void setActive_HealthFunctionality(bool state){
         hasHealthButtonClicked=state;
         //TODO: similar to Evolution
-        ResetItemsButton.SetActive(state);
         
     }
-
-
-
-
-
-
 
 }
