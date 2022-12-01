@@ -101,7 +101,7 @@ public class ChangeCard : MonoBehaviour
         Model_1.gameObject.SetActive(state);
         Model_2.gameObject.SetActive(state);
         //Animation3D.gameObject.SetActive(state);
-        ResetItemsButton.gameObject.SetActive(state); //TO FIX BECAUSE IF U PUT IT ALSO IN HEALTH IT DOES NOT WORK
+        ResetItemsButton.gameObject.SetActive(state); // TODO: TO FIX BECAUSE IF U PUT IT ALSO IN HEALTH IT DOES NOT WORK 
     }
 
 
