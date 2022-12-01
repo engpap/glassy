@@ -3,7 +3,11 @@ guid: 2194d5d635e5bfb41ad25700190e5564
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
+<<<<<<<< HEAD:glassy/Assets/HSY/Modern UI Pack/Textures/Border/Radial/512px/Radial Outline 512px - 1x.png.meta
   serializedVersion: 11
+========
+  serializedVersion: 12
+>>>>>>>> play-mode:glassy/Assets/NRSDK/Demos/TrackingImage/Images/nreal_snake.jpg.meta
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -23,6 +27,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -31,9 +37,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -54,10 +60,18 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+<<<<<<<< HEAD:glassy/Assets/HSY/Modern UI Pack/Textures/Border/Radial/512px/Radial Outline 512px - 1x.png.meta
   applyGammaDecoding: 1
+========
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
+>>>>>>>> play-mode:glassy/Assets/NRSDK/Demos/TrackingImage/Images/nreal_snake.jpg.meta
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -94,7 +108,39 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+<<<<<<<< HEAD:glassy/Assets/HSY/Modern UI Pack/Textures/Border/Radial/512px/Radial Outline 512px - 1x.png.meta
     forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: WebGL
+========
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+>>>>>>>> play-mode:glassy/Assets/NRSDK/Demos/TrackingImage/Images/nreal_snake.jpg.meta
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+<<<<<<<< HEAD:glassy/Assets/HSY/Modern UI Pack/Textures/Border/Radial/512px/Radial Outline 512px - 1x.png.meta
+========
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 512
@@ -106,20 +152,29 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+>>>>>>>> play-mode:glassy/Assets/NRSDK/Demos/TrackingImage/Images/nreal_snake.jpg.meta
   spriteSheet:
     serializedVersion: 2
     sprites: []
     outline: []
     physicsShape: []
     bones: []
+<<<<<<<< HEAD:glassy/Assets/HSY/Modern UI Pack/Textures/Border/Radial/512px/Radial Outline 512px - 1x.png.meta
     spriteID: 44cc3f941ee41b64e8743797cbbb5376
+========
+    spriteID: 5e97eb03825dee720800000000000000
+>>>>>>>> play-mode:glassy/Assets/NRSDK/Demos/TrackingImage/Images/nreal_snake.jpg.meta
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
+<<<<<<<< HEAD:glassy/Assets/HSY/Modern UI Pack/Textures/Border/Radial/512px/Radial Outline 512px - 1x.png.meta
+========
+    nameFileIdTable: {}
+>>>>>>>> play-mode:glassy/Assets/NRSDK/Demos/TrackingImage/Images/nreal_snake.jpg.meta
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

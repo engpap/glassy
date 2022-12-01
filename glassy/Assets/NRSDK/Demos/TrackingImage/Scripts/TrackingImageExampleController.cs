@@ -20,7 +20,7 @@ namespace NRKernal.NRExamples
         public TrackingImageVisualizer TrackingImageVisualizerPrefab;
 
         /// <summary> The overlay containing the fit to scan user guide. </summary>
-        public GameObject FitToScanOverlay;
+        //public GameObject FitToScanOverlay;
 
         /// <summary> The visualizers. </summary>
         private Dictionary<int, TrackingImageVisualizer> m_Visualizers
@@ -63,7 +63,7 @@ namespace NRKernal.NRExamples
                     Destroy(visualizer.gameObject);
                 }
 
-                FitToScanOverlay.SetActive(false);
+              //  FitToScanOverlay.SetActive(false);
             }
         }
 
