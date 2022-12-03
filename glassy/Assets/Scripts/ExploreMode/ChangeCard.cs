@@ -47,6 +47,9 @@ public class ChangeCard : MonoBehaviour
         // Hide 3D models that should be activated when Health button is clicked
         setActive_HealthFunctionality(false);
 
+        // Hide Reset 3D Models Position button
+        setActive_ResetItemsButton(false);
+
 
         //---- Add Buttons Listeners
         DetailsButton.onClick.AddListener(delegate{ChangeImage("Details");}); 
@@ -63,19 +66,23 @@ public class ChangeCard : MonoBehaviour
             setActive_DetailsFunctionality(hasDetailsButtonClicked);
             setActive_EvolutionFunctionality(false);
             setActive_HealthFunctionality(false);
+            setActive_ResetItemsButton(false);
             
         }
         if(buttonName=="Evolution"){
             Console.WriteLine("Evolution button is selected");
             hasEvolutionButtonClicked=!hasEvolutionButtonClicked;
             setActive_EvolutionFunctionality(hasEvolutionButtonClicked);
+            setActive_ResetItemsButton(hasEvolutionButtonClicked);
             setActive_DetailsFunctionality(false);
             setActive_HealthFunctionality(false);
+            
         }
         if(buttonName=="Health"){
             Console.WriteLine("Health button is selected");
             hasHealthButtonClicked=!hasHealthButtonClicked;
             setActive_HealthFunctionality(hasHealthButtonClicked);
+            setActive_ResetItemsButton(hasHealthButtonClicked);
             setActive_EvolutionFunctionality(false);
             setActive_DetailsFunctionality(false);
             //TODO: similar to Evolutionx
@@ -101,7 +108,7 @@ public class ChangeCard : MonoBehaviour
         hasEvolutionButtonClicked=state;
         EvolutionModel_1.gameObject.SetActive(state);
         EvolutionModel_2.gameObject.SetActive(state);
-        ResetItemsButton.gameObject.SetActive(state); // TODO: TO FIX BECAUSE IF U PUT IT ALSO IN HEALTH IT DOES NOT WORK 
+       
     }
 
 
@@ -111,8 +118,11 @@ public class ChangeCard : MonoBehaviour
     private void setActive_HealthFunctionality(bool state){
         hasHealthButtonClicked=state;
         HealthModel_1.gameObject.SetActive(state);
-        //TODO: similar to Evolution
         
+    }
+
+    private void setActive_ResetItemsButton(bool state){
+        ResetItemsButton.gameObject.SetActive(state);
     }
 
 }
