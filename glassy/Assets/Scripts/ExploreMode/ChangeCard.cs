@@ -25,6 +25,7 @@ public class ChangeCard : MonoBehaviour
     // Health Section
     public Button HealthButton;
     private bool hasHealthButtonClicked = false;
+    public GameObject HealthPanel;
     public GameObject HealthModel_1;
     
     // TODO: similar to Evolution
@@ -117,7 +118,9 @@ public class ChangeCard : MonoBehaviour
     */
     private void setActive_HealthFunctionality(bool state){
         hasHealthButtonClicked=state;
+        HealthPanel.SetActive(state);
         HealthModel_1.gameObject.SetActive(state);
+        
         
     }
 
