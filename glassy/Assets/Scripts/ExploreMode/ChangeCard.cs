@@ -17,15 +17,16 @@ public class ChangeCard : MonoBehaviour
     public  Button EvolutionButton;
     private bool hasEvolutionButtonClicked = false;
 
-    public GameObject Model_1;
-    public GameObject Model_2;
+    public GameObject EvolutionModel_1;
+    public GameObject EvolutionModel_2;
 
-    //public GameObject Animation3D;
 
 
     // Health Section
     public Button HealthButton;
     private bool hasHealthButtonClicked = false;
+    public GameObject HealthModel_1;
+    
     // TODO: similar to Evolution
 
     // Common button for Evolution and Health sections
@@ -98,9 +99,8 @@ public class ChangeCard : MonoBehaviour
     */
     private void setActive_EvolutionFunctionality(bool state){
         hasEvolutionButtonClicked=state;
-        Model_1.gameObject.SetActive(state);
-        Model_2.gameObject.SetActive(state);
-        //Animation3D.gameObject.SetActive(state);
+        EvolutionModel_1.gameObject.SetActive(state);
+        EvolutionModel_2.gameObject.SetActive(state);
         ResetItemsButton.gameObject.SetActive(state); // TODO: TO FIX BECAUSE IF U PUT IT ALSO IN HEALTH IT DOES NOT WORK 
     }
 
@@ -110,6 +110,7 @@ public class ChangeCard : MonoBehaviour
     */
     private void setActive_HealthFunctionality(bool state){
         hasHealthButtonClicked=state;
+        HealthModel_1.gameObject.SetActive(state);
         //TODO: similar to Evolution
         
     }
