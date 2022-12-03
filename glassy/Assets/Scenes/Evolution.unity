@@ -1570,6 +1570,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AppleTree
       objectReference: {fileID: 0}
+    - target: {fileID: 6329411557815221983, guid: ced61812b32c96848bab13cf43f47103, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ced61812b32c96848bab13cf43f47103, type: 3}
 --- !u!4 &6808258225830528592
