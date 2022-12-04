@@ -2,21 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
+
 public class GPSLocation : MonoBehaviour
 {
-    //UI Text to show GPS values
-    public TMP_Text GPSStatus;
-    public TMP_Text latitudeValue;
-    public TMP_Text longitudeValue;
-    public TMP_Text altitudeValue;
-    public TMP_Text horizontalAccuracyValue;
+   
+    public static GPSLocation Instance {set;get;}
+
+    public float latitude;
+    public float longitude;
 
     private void Start()
     {
-       
+        Instance=this;
+        DontDestroyOnLoad(gameObject);
         StartCoroutine(GPSLoc());
-        
     }//end of Start
 
     IEnumerator GPSLoc()
@@ -42,39 +41,59 @@ public class GPSLocation : MonoBehaviour
         // Service didn't initialize in 20 seconds
         if (maxWait < 1)
         {
-            GPSStatus.text = "Time out";
+          
             yield break;
         }
 
         // Connection has failed
         if (Input.location.status == LocationServiceStatus.Failed)
         {
-            GPSStatus.text = "Unable to determine device location";
+           
             yield break;
         }
         else
         {
+
+            latitude=Input.location.lastData.latitude;
+            longitude= Input.location.lastData.longitude;
+
+            yield break;
             // Access granted and location value could be retrieved
             //Call UpdateGPSData first time after 0.5sec and then call UpdateGPSData after 1 sec and repeat it.
-            GPSStatus.text = "Running";
-            InvokeRepeating("UpdateGPSData", 0.5f, 1f);
-
+           // InvokeRepeating("UpdateGPSData", 0.5f, 1f);
+            
         }
 
         // Stop service if there is no need to query location updates continuously
         //Input.location.Stop();
-    }//end of GPSLoc
+    }
 
-    //update values on UI Text fields
-    private void UpdateGPSData()
+  
+    /*private void UpdateGPSData()
     {
+        Coordinate[] cordinate=new Coordinate[5];
+        cordinate[0].latitude=45.484835f;   //SALVIA RUSSA
+        cordinate[0].longitude=9.193702f;
+        cordinate[1].latitude=45.484531f;   //SALICE PIANGENTE 
+        cordinate[1].longitude=9.191907f;
+        cordinate[2].latitude=45.484827f;   //FRASSINO
+        cordinate[2].longitude=9.192582f;
+        cordinate[3].latitude=45.483627f;   //PAPAVERO
+        cordinate[3].longitude=9.193029f;
+        cordinate[4].latitude=45.484933f;   //IRIS SIBIRICA
+        cordinate[4].longitude=9.193889f;
+        
         if (Input.location.status == LocationServiceStatus.Running)
-        {
+        {d
             GPSStatus.text = "Running";
-            latitudeValue.text = Input.location.lastData.latitude.ToString();
-            longitudeValue.text = Input.location.lastData.longitude.ToString();
-            altitudeValue.text = Input.location.lastData.altitude.ToString();
-            horizontalAccuracyValue.text = Input.location.lastData.horizontalAccuracy.ToString();
+            for(int i=0;i<5;i++){
+                if(cordinate[i].latitude<45.485366)
+            }
+
+
+            latitudeValue = Input.location.lastData.latitude;
+            longitudeValue = Input.location.lastData.longitude;
+           
         }
         else if(Input.location.status == LocationServiceStatus.Failed)
         {
@@ -85,5 +104,5 @@ public class GPSLocation : MonoBehaviour
         else
             GPSStatus.text = "Initializing";
     }//end of UpdateGPSData
-
+*/
 }//end of class
