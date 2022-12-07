@@ -6,36 +6,37 @@ public class GrabDrop : MonoBehaviour
 {
     #region Attributes
 
-    public GameObject HeartCard;
+    public GameObject BrainCard;
+
 
     #endregion
 
     #region MonoBehaviour API
 
     public void Start(){
-        HeartCard.SetActive(false);
+        BrainCard.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other){
-        if(other.tag=="Heart")
-            ShowInfoCard("Heart");
+        if(other.tag=="Brain")
+            ShowInfoCard("Brain");
     }
 
     private void OnTriggerExit(Collider other){
-        if(other.tag=="Heart")
-            HideInfoCard("Heart");
+        if(other.tag=="Brain")
+            HideInfoCard("Brain");
     }
     #endregion
 
     public void HideInfoCard(string tagName){
-        if(tagName=="Heart"){
-            HeartCard.SetActive(false);
+        if(tagName=="Brain"){
+            BrainCard.SetActive(false);
         } 
     }
 
     public void ShowInfoCard(string tagName){
-        if(tagName=="Heart"){
-            HeartCard.SetActive(true);
+        if(tagName=="Brain"){
+            BrainCard.SetActive(true);
         }
     }
 

@@ -16,9 +16,11 @@ public class ChangeCard : MonoBehaviour
     // Evolution Section
     public  Button EvolutionButton;
     private bool hasEvolutionButtonClicked = false;
+    public GameObject EvolutionPanel;
 
     public GameObject EvolutionModel_1;
     public GameObject EvolutionModel_2;
+    public GameObject EvolutionModel_3;
 
 
 
@@ -107,8 +109,10 @@ public class ChangeCard : MonoBehaviour
     */
     private void setActive_EvolutionFunctionality(bool state){
         hasEvolutionButtonClicked=state;
+        EvolutionPanel.SetActive(state);
         EvolutionModel_1.gameObject.SetActive(state);
         EvolutionModel_2.gameObject.SetActive(state);
+        EvolutionModel_3.gameObject.SetActive(state);
        
     }
 
