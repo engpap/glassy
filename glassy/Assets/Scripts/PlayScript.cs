@@ -12,7 +12,6 @@ public struct Coordinate
 }
 
 
-
 public class PlayScript : MonoBehaviour
 {
     private int count;
