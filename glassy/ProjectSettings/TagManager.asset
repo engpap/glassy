@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Heart
   - Brain
+  - Lungs
   layers:
   - Default
   - TransparentFX
