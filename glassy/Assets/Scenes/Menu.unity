@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1602,6 +1602,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224383723183572354, guid: fadada887bc7b3946bff1496ea5561c3, type: 3}
   m_PrefabInstance: {fileID: 1031674587}
   m_PrefabAsset: {fileID: 0}
+--- !u!20 &1144985988 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 20880588574554076, guid: 665d8158924bd2648a94fb3f87691bbb, type: 3}
+  m_PrefabInstance: {fileID: 375612748}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1175444023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1805,7 +1810,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1144985988}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1

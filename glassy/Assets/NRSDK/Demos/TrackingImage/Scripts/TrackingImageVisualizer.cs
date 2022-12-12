@@ -3,44 +3,45 @@ using System.Collections.Generic;
 using NRKernal;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class TrackingImageVisualizer : MonoBehaviour
     {
-
-
         public NRTrackableImage Image;
-        public GameObject cubeWhite;
-        public GameObject cubeRed;
-        public GameObject cubeGreen;
-        public GameObject imageI;
+        public Button Playbutton;
+        public Image image;
+        public GameObject imMM;
+        public Sprite iris, salvia, frassino, weepingwillow,papavero;
+        public GameObject whiteCube;
+
 
         public void Update()
         {
             if(Image!=null){
-              Debug.Log("Ho riconosciuto un immagine");
-              imageI.SetActive(true);
-
-              if(Image.GetDataBaseIndex()==0){
-                    cubeWhite.SetActive(true);
-                    Debug.Log("Image index 0");
-              }
-                     
-              else if(Image.GetDataBaseIndex()==1){
-                    cubeRed.SetActive(true);
-                    Debug.Log("Image index 1");
-              }
-              else{
-                    Debug.Log("Image 2");
-                    cubeGreen.SetActive(true);   
-                    }
-           
-              return;
-            }else{
-            Debug.Log("Non ho riconosciuto l'image");
-            imageI.SetActive(false);
-            cubeWhite.SetActive(false);
-            cubeRed.SetActive(false);
-            cubeGreen.SetActive(false);
+                whiteCube.SetActive(true);
+                imMM.SetActive(true);
+                if((Image.GetDataBaseIndex()==0) && (image.sprite==salvia)){
+                    setInteractable();
+                }            
+                else if((Image.GetDataBaseIndex()==1) && (image.sprite==papavero)){
+                    setInteractable();
+                }
+                else if((Image.GetDataBaseIndex()==2) && (image.sprite==frassino)){
+                    setInteractable();
+                }
+                else if((Image.GetDataBaseIndex()==3) && (image.sprite==weepingwillow)) {
+                    setInteractable();
+                }
+                else if((Image.GetDataBaseIndex()==4) && (image.sprite==iris)) {
+                    setInteractable();
+                }           
+                return;
             }
             
         }
+
+       public void setInteractable(){
+        Playbutton.interactable=true;
+        Playbutton.onClick.Invoke();
+       } 
+        
     }

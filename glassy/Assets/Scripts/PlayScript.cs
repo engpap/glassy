@@ -20,14 +20,10 @@ public class PlayScript : MonoBehaviour
     public Image image;
     public Sprite iris, salvia, frassino, weepingwillow,papavero;
     Coordinate[] coordinate={new Coordinate(),new Coordinate(),new Coordinate(),new Coordinate(),new Coordinate()};
-   
-  
-
     
     // Start is called before the first frame update
     void Start()
     {
-        
         coordinate[0].latitude=45.484835f;   //SALVIA RUSSA
         coordinate[0].longitude=9.193702f;
         coordinate[1].latitude=45.483627f;   //PAPAVERO
@@ -98,6 +94,7 @@ public class PlayScript : MonoBehaviour
             FindObject(this,"Quad3_red").SetActive(true);
         if((coordinate[count].latitude>=45.483177f) && (coordinate[count].latitude<=45.484757f) && (coordinate[count].longitude>=9.192507f) && (coordinate[count].longitude<=9.194318f))
             FindObject(this,"Quad4_red").SetActive(true);
+
     }
 
     public void DarkArea(){
