@@ -8,6 +8,7 @@ public class utility : MonoBehaviour
     public GameObject principal;
     private bool flagTutorial;
     
+    
     public void returnFromOption(){
         
         if(!flagTutorial)
