@@ -27,6 +27,7 @@ public class PlayScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         coordinate[0].latitude=45.484835f;   //SALVIA RUSSA
         coordinate[0].longitude=9.193702f;
         coordinate[1].latitude=45.483627f;   //PAPAVERO
@@ -129,6 +130,16 @@ public class PlayScript : MonoBehaviour
             }
 
     }
+    
+    public void ColoredPinPosition(){
+        GameObject panelColorPin=FindObject(this,"panel_hint2");
+        Button button2=panelColorPin.GetComponent<Button>();
+        button2.interactable=false;
+        GameObject pointer=GameObject.Find("pointer");
+         
+         
+    }
+
     
     public static GameObject FindObject(PlayScript parent, string name)
     {
