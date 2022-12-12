@@ -35,6 +35,7 @@ public class TrackingImageVisualizer : MonoBehaviour
            
               return;
             }else{
+            Debug.Log("Non ho riconosciuto l'image");
             imageI.SetActive(false);
             cubeWhite.SetActive(false);
             cubeRed.SetActive(false);
