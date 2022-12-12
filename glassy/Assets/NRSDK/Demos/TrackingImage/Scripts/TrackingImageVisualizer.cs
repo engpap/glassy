@@ -16,14 +16,23 @@ public class TrackingImageVisualizer : MonoBehaviour
         public void Update()
         {
             if(Image!=null){
+              Debug.Log("Ho riconosciuto un immagine");
               imageI.SetActive(true);
 
-              if(Image.GetDataBaseIndex()==0)
-                     cubeWhite.SetActive(true);
-              else if(Image.GetDataBaseIndex()==1)
+              if(Image.GetDataBaseIndex()==0){
+                    cubeWhite.SetActive(true);
+                    Debug.Log("Image index 0");
+              }
+                     
+              else if(Image.GetDataBaseIndex()==1){
                     cubeRed.SetActive(true);
-              else
-                    cubeGreen.SetActive(true);      
+                    Debug.Log("Image index 1");
+              }
+              else{
+                    Debug.Log("Image 2");
+                    cubeGreen.SetActive(true);   
+                    }
+           
               return;
             }else{
             imageI.SetActive(false);

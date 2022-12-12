@@ -11,4 +11,8 @@ public class mainMenu : MonoBehaviour
   public void ExploreGame(){
     SceneManager.LoadScene(3);
   }
+
+  public void BacktoMenu(){
+    SceneManager.LoadScene(0);
+  }
 }
