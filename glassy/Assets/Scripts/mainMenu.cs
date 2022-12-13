@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 public class mainMenu : MonoBehaviour
 {
   public void PlayGame(){
-    SceneManager.LoadScene(2);
+    SceneManager.LoadScene(1);
   }
   public void ExploreGame(){
-    SceneManager.LoadScene(3);
+    SceneManager.LoadScene(2);
   }
 
   public void BacktoMenu(){
