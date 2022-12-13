@@ -3696,7 +3696,6 @@ GameObject:
   - component: {fileID: 863523538}
   - component: {fileID: 863523537}
   - component: {fileID: 863523536}
-  - component: {fileID: 863523535}
   - component: {fileID: 863523534}
   m_Layer: 5
   m_Name: Settings
@@ -3717,24 +3716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24fa12536fe97a2438f68697fb8a7bad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  principal: {fileID: 0}
---- !u!114 &863523535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863523533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81673ecfb6724bd41a1a1095ea51134b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obj1: {fileID: 1381778653}
-  otherobj1: {fileID: 0}
-  otherobj2: {fileID: 0}
-  otherobj3: {fileID: 0}
-  otherobj4: {fileID: 0}
+  principal: {fileID: 1469862086}
 --- !u!114 &863523536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3779,10 +3761,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 863523535}
-        m_TargetAssemblyTypeName: HintsScript, Assembly-CSharp
-        m_MethodName: showHints
-        m_Mode: 1
+      - m_Target: {fileID: 1546282906}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3791,7 +3773,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1344765449}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -3817,7 +3799,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 863523534}
         m_TargetAssemblyTypeName: utility, Assembly-CSharp
-        m_MethodName: onClickOption
+        m_MethodName: onClickOptionExploreMode
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3826,6 +3808,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1381778653}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &863523537
 MonoBehaviour:
@@ -5480,7 +5474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114801670993874940, guid: fadada887bc7b3946bff1496ea5561c3, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: returnFromOption
+      value: returnFromOptionExploreMode
       objectReference: {fileID: 0}
     - target: {fileID: 114801670993874940, guid: fadada887bc7b3946bff1496ea5561c3, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
@@ -5666,7 +5660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24fa12536fe97a2438f68697fb8a7bad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  principal: {fileID: 0}
+  principal: {fileID: 1469862086}
 --- !u!1001 &1145666286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6301,7 +6295,7 @@ PrefabInstance:
     - target: {fileID: 114801670993874940, guid: fadada887bc7b3946bff1496ea5561c3, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1344765449}
     - target: {fileID: 114801670993874940, guid: fadada887bc7b3946bff1496ea5561c3, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -7443,7 +7437,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1546282907
 RectTransform:
   m_ObjectHideFlags: 0

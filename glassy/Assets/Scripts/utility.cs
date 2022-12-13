@@ -7,8 +7,21 @@ public class utility : MonoBehaviour
 {
     public GameObject principal;
     private bool flagTutorial;
+    private bool flagTutorialExploreMode;
     
-    
+    public void returnFromOptionExploreMode(){
+         if(!flagTutorialExploreMode)
+        {
+            GameObject tutorial = principal.transform.Find("Tutorial").gameObject;
+            tutorial.SetActive(true);
+            flagTutorialExploreMode=true;
+        }
+        else
+        {
+            GameObject explore=principal.transform.Find("Explore").gameObject;
+            explore.SetActive(true);
+        }
+    }
     public void returnFromOption(){
         
         if(!flagTutorial)
@@ -32,6 +45,18 @@ public class utility : MonoBehaviour
         else
             {
                 flagTutorial=true;
+                tutorial.SetActive(false);
+            }
+
+    }
+
+    public void onClickOptionExploreMode(){
+        GameObject tutorial=principal.transform.Find("Tutorial").gameObject;
+        if(!tutorial.activeSelf)
+            flagTutorialExploreMode=false;
+        else
+            {
+                flagTutorialExploreMode=true;
                 tutorial.SetActive(false);
             }
 

@@ -37,11 +37,9 @@ public class TrackingImageVisualizer : MonoBehaviour
 
        public void setInteractable(){
         Playbutton.interactable=true;
-        if( (count==0 && image.sprite==salvia) || (count==1 && image.sprite==papavero) || (count==2 && image.sprite==frassino) || (count==3 && image.sprite==weepingwillow) ||(count==4 && image.sprite==iris) )
-            { 
-                Playbutton.onClick.Invoke();
-                count++;
-            }
+        Playbutton.onClick.Invoke();
+        Playbutton.interactable=false;
+                
        } 
         
     }
