@@ -61,6 +61,8 @@ public class PlayScript : MonoBehaviour
         
         if(count<5){
             count++;
+            if(count<4)
+                FindObject(this,"PlantFound").SetActive(true);
             buttonText.text = "Plant Found: "+count+"/5";
             switch (count)
             {
@@ -79,6 +81,16 @@ public class PlayScript : MonoBehaviour
                 default:
                     break;
             }
+        }
+        else{
+            FindObject(this,"GameComplete").SetActive(true);
+            FindObject(this,"PlayModeView").SetActive(false);
+            FindObject(this,"PlantView").SetActive(false);
+            FindObject(this,"HintsView").SetActive(false);
+            FindObject(this,"OptionView").SetActive(false);
+            FindObject(this,"MapView").SetActive(false);
+            FindObject(this,"Settings").SetActive(false);
+            FindObject(this,"PlantFound").SetActive(false);
         }
     }
 

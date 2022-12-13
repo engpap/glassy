@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HintsScript : MonoBehaviour
 {
-    public GameObject obj1,otherobj1,otherobj2,otherobj3;
+    public GameObject obj1,otherobj1,otherobj2,otherobj3,otherobj4;
     public void showHints(){
         if(obj1.activeSelf){
             obj1.SetActive(false);
@@ -16,6 +16,7 @@ public class HintsScript : MonoBehaviour
             otherobj1.SetActive(false);
             otherobj2.SetActive(false);
             otherobj3.SetActive(false);
+            otherobj4.SetActive(false);
         }
     }
 }
