@@ -9,16 +9,11 @@ public class TrackingImageVisualizer : MonoBehaviour
         public NRTrackableImage Image;
         public Button Playbutton;
         public Image image;
-        public GameObject imMM;
         public Sprite iris, salvia, frassino, weepingwillow,papavero;
-        public GameObject whiteCube;
-
-
         public void Update()
         {
             if(Image!=null){
-                whiteCube.SetActive(true);
-                imMM.SetActive(true);
+                
                 if((Image.GetDataBaseIndex()==0) && (image.sprite==salvia)){
                     setInteractable();
                 }            
