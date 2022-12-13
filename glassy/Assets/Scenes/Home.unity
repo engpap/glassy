@@ -1224,12 +1224,12 @@ GameObject:
   - component: {fileID: 1050977106}
   - component: {fileID: 1050977105}
   m_Layer: 0
-  m_Name: Panel
+  m_Name: WallPaper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1050977104
 RectTransform:
   m_ObjectHideFlags: 0
