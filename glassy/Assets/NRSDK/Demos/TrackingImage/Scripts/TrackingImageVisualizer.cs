@@ -10,6 +10,7 @@ public class TrackingImageVisualizer : MonoBehaviour
         public Button Playbutton;
         public Image image;
         public Sprite iris, salvia, frassino, weepingwillow,papavero;
+        private count=0;
         public void Update()
         {
             if(Image!=null){
@@ -17,16 +18,16 @@ public class TrackingImageVisualizer : MonoBehaviour
                 if((Image.GetDataBaseIndex()==0) && (image.sprite==salvia)){
                     setInteractable();
                 }            
-                else if((Image.GetDataBaseIndex()==1) && (image.sprite==papavero)){
+                if((Image.GetDataBaseIndex()==1) && (image.sprite==papavero)){
                     setInteractable();
                 }
-                else if((Image.GetDataBaseIndex()==2) && (image.sprite==frassino)){
+                if((Image.GetDataBaseIndex()==2) && (image.sprite==frassino)){
                     setInteractable();
                 }
-                else if((Image.GetDataBaseIndex()==3) && (image.sprite==weepingwillow)) {
+                if((Image.GetDataBaseIndex()==3) && (image.sprite==weepingwillow)) {
                     setInteractable();
                 }
-                else if((Image.GetDataBaseIndex()==4) && (image.sprite==iris)) {
+                if((Image.GetDataBaseIndex()==4) && (image.sprite==iris)) {
                     setInteractable();
                 }           
                 return;
@@ -36,7 +37,11 @@ public class TrackingImageVisualizer : MonoBehaviour
 
        public void setInteractable(){
         Playbutton.interactable=true;
-        Playbutton.onClick.Invoke();
+        if( (count==0 && imnage.sprite==salvia) || (count==1 && image.sprite==papavero) || (count==2 && image.sprite==frassino) || (count==3 && image.sprite=weepingwillow) ||(count==4 && image.sprite==iris) )
+            { 
+                Playbutton.onClick.Invoke();
+                count++;
+            }
        } 
         
     }
