@@ -10,7 +10,7 @@ public class TrackingImageVisualizer : MonoBehaviour
         public Button Playbutton;
         public Image image;
         public Sprite iris, salvia, frassino, weepingwillow,papavero;
-        private count=0;
+        private int count=0;
         public void Update()
         {
             if(Image!=null){
@@ -37,7 +37,7 @@ public class TrackingImageVisualizer : MonoBehaviour
 
        public void setInteractable(){
         Playbutton.interactable=true;
-        if( (count==0 && imnage.sprite==salvia) || (count==1 && image.sprite==papavero) || (count==2 && image.sprite==frassino) || (count==3 && image.sprite=weepingwillow) ||(count==4 && image.sprite==iris) )
+        if( (count==0 && image.sprite==salvia) || (count==1 && image.sprite==papavero) || (count==2 && image.sprite==frassino) || (count==3 && image.sprite==weepingwillow) ||(count==4 && image.sprite==iris) )
             { 
                 Playbutton.onClick.Invoke();
                 count++;
