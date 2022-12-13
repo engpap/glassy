@@ -3734,6 +3734,7 @@ MonoBehaviour:
   otherobj1: {fileID: 0}
   otherobj2: {fileID: 0}
   otherobj3: {fileID: 0}
+  otherobj4: {fileID: 0}
 --- !u!114 &863523536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8983,7 +8984,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2094246942
 RectTransform:
   m_ObjectHideFlags: 0
