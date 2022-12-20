@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class TrackingImageVisualizer : MonoBehaviour
     {
         public NRTrackableImage Image;
+       
         public Button Playbutton;
         public Image image;
         public Sprite iris, salvia, frassino, weepingwillow,papavero;
@@ -31,6 +32,11 @@ public class TrackingImageVisualizer : MonoBehaviour
                     setInteractable();
                 }           
                 return;
+            GameObject FitToScan=GameObject.Find("FitToScan");  
+            FitToScan.SetActive(false);
+            var config = NRSessionManager.Instance.NRSessionBehaviour.SessionConfig;
+            config.ImageTrackingMode = TrackableImageFindingMode.DISABLE;
+            NRSessionManager.Instance.SetConfiguration(config);
             }
             
         }
