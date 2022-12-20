@@ -4584,8 +4584,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655793353707240a195aee929b80d41a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Playbutton: {fileID: 0}
-  image: {fileID: 0}
+  Playbutton: {fileID: 743720636}
+  image: {fileID: 1507748066}
   iris: {fileID: 21300000, guid: 372d90261b5ddab43b7f48962b74d690, type: 3}
   salvia: {fileID: 21300000, guid: 90a3a363177bd0c4d958d8ee766acc29, type: 3}
   frassino: {fileID: 21300000, guid: 83de1cee767aaf14aa5f746c116db7eb, type: 3}
