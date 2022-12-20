@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4584,8 +4584,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655793353707240a195aee929b80d41a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Playbutton: {fileID: 743720636}
-  image: {fileID: 1507748066}
+  CountPlantButton: {fileID: 1234648400}
+  ImageToFind: {fileID: 1507748066}
   iris: {fileID: 21300000, guid: 372d90261b5ddab43b7f48962b74d690, type: 3}
   salvia: {fileID: 21300000, guid: 90a3a363177bd0c4d958d8ee766acc29, type: 3}
   frassino: {fileID: 21300000, guid: 83de1cee767aaf14aa5f746c116db7eb, type: 3}
@@ -7804,6 +7804,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fadada887bc7b3946bff1496ea5561c3, type: 3}
+--- !u!114 &1234648400 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114648109341009852, guid: fadada887bc7b3946bff1496ea5561c3, type: 3}
+  m_PrefabInstance: {fileID: 1234648399}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511373724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1235360997
 GameObject:
   m_ObjectHideFlags: 0
