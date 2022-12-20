@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class TrackingImageVisualizer : MonoBehaviour
     {
         public NRTrackableImage Image;
-       
         public Button Playbutton;
         public Image image;
         public Sprite iris, salvia, frassino, weepingwillow,papavero;
