@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class TrackingImageVisualizer : MonoBehaviour
     {
         public NRTrackableImage Image;
-        public Button Playbutton;
+        public Button CountPlantButton;
         public Image image;
         public Sprite iris, salvia, frassino, weepingwillow,papavero;
         private int count=0;
@@ -41,10 +41,9 @@ public class TrackingImageVisualizer : MonoBehaviour
         }
 
        public void setInteractable(){
-        Playbutton.interactable=true;
-        Playbutton.onClick.Invoke();
-        Playbutton.interactable=false;
-                
+        CountPlantButton.interactable=true;
+        CountPlantButton.onClick.Invoke();
+        CountPlantButton.interactable=false;        
        } 
         
     }
