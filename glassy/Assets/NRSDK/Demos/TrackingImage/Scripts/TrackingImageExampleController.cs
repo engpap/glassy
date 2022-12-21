@@ -52,13 +52,15 @@ namespace NRKernal.NRExamples
                 {
                     NRDebugger.Info("Create new TrackingImageVisualizer!");
                     // Create an anchor to ensure that NRSDK keeps tracking this augmented image.
+                    Debug.Log(">>> TrackingImageExampleController: in if ");
                     visualizer = (TrackingImageVisualizer)Instantiate(TrackingImageVisualizerPrefab, image.GetCenterPose().position, image.GetCenterPose().rotation);
                     visualizer.Image = image;
                     visualizer.transform.parent = transform;
                     m_Visualizers.Add(image.GetDataBaseIndex(), visualizer);
                 }
                 else if (image.GetTrackingState() == TrackingState.Stopped && visualizer != null)
-                {
+                {   
+                    Debug.Log(">>> TrackingImageExampleController: in elsif ");
                     m_Visualizers.Remove(image.GetDataBaseIndex());
                     Destroy(visualizer.gameObject);
                 }
