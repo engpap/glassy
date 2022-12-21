@@ -73,6 +73,7 @@ namespace NRKernal.NRExamples
             var config = NRSessionManager.Instance.NRSessionBehaviour.SessionConfig;
             config.ImageTrackingMode = TrackableImageFindingMode.ENABLE;
             NRSessionManager.Instance.SetConfiguration(config);
+            Debug.Log("Enable Image tracking");
         }
 
         /// <summary> Disables the image tracking. </summary>
