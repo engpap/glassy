@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class TrackingImageVisualizer : MonoBehaviour
     {
         public NRTrackableImage Image;
-        public Button Playbutton;
-        public Image image;
+        public Button CountPlantButton;
+        public Image ImageToFind;
         public Sprite iris, salvia, frassino, weepingwillow,papavero;
         private int count=0;
 
@@ -21,19 +21,19 @@ public class TrackingImageVisualizer : MonoBehaviour
         {
             if(Image!=null){
                 
-                if((Image.GetDataBaseIndex()==0) && (image.sprite==salvia)){
+                if((Image.GetDataBaseIndex()==0) && (ImageToFind.sprite==salvia)){
                     setInteractable();
                 }            
-                if((Image.GetDataBaseIndex()==1) && (image.sprite==papavero)){
+                if((Image.GetDataBaseIndex()==1) && (ImageToFind.sprite==papavero)){
                     setInteractable();
                 }
-                if((Image.GetDataBaseIndex()==2) && (image.sprite==frassino)){
+                if((Image.GetDataBaseIndex()==2) && (ImageToFind.sprite==frassino)){
                     setInteractable();
                 }
-                if((Image.GetDataBaseIndex()==3) && (image.sprite==weepingwillow)) {
+                if((Image.GetDataBaseIndex()==3) && (ImageToFind.sprite==weepingwillow)) {
                     setInteractable();
                 }
-                if((Image.GetDataBaseIndex()==4) && (image.sprite==iris)) {
+                if((Image.GetDataBaseIndex()==4) && (ImageToFind.sprite==iris)) {
                     setInteractable();
                 }           
                 return;
@@ -44,9 +44,9 @@ public class TrackingImageVisualizer : MonoBehaviour
         }
 
        public void setInteractable(){
-        Playbutton.interactable=true;
-        Playbutton.onClick.Invoke();
-        Playbutton.interactable=false;
+        CountPlantButton.interactable=true;
+        CountPlantButton.onClick.Invoke();
+        CountPlantButton.interactable=false;        
         var config = NRSessionManager.Instance.NRSessionBehaviour.SessionConfig;
         config.ImageTrackingMode = TrackableImageFindingMode.DISABLE;
         NRSessionManager.Instance.SetConfiguration(config);
