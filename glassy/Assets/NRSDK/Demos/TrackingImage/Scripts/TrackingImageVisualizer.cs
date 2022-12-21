@@ -22,28 +22,37 @@ public class TrackingImageVisualizer : MonoBehaviour
         {
 
             if(Image!=null){
-                Debug.Log(">>> "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
+               
                 if((Image.GetDataBaseIndex()==0) && (ImageToFind.sprite==salvia)){
+                    Debug.Log(">>> "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
                     setInteractable();
                     Debug.Log(">>> Recognized image, database index 0 ");
+                    Debug.Log(">>> Index 0:"+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
                 }            
                 if((Image.GetDataBaseIndex()==1) && (ImageToFind.sprite==papavero)){
+                    Debug.Log(">>> "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
                     setInteractable();
                     Debug.Log(">>> Recognized image, database index 1 ");
+                    Debug.Log(">>> Index 1:"+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
                 }
                 if((Image.GetDataBaseIndex()==2) && (ImageToFind.sprite==frassino)){
+                    Debug.Log(">>> "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
                     setInteractable();
                     Debug.Log(">>> Recognized image, database index 2 ");
+                    Debug.Log(">>> Index 2:"+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
                 }
                 if((Image.GetDataBaseIndex()==3) && (ImageToFind.sprite==weepingwillow)) {
+                    Debug.Log(">>> "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
                     setInteractable();
                     Debug.Log(">>> Recognized image, database index 3 ");
+                     Debug.Log(">>> Index 3:"+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
                 }
                 if((Image.GetDataBaseIndex()==4) && (ImageToFind.sprite==iris)) {
+                    Debug.Log(">>> "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
                     setInteractable();
                     Debug.Log(">>> Recognized image, database index 4 ");
-                }    
-                Debug.Log(">>> "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);       
+                    Debug.Log(">>> Index 4:"+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
+                }     
                 return;
 
             }
