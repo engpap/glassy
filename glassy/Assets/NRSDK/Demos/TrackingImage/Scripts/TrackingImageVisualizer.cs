@@ -48,19 +48,22 @@ public class TrackingImageVisualizer : MonoBehaviour
         }
 
        public void setInteractable(){
-        Debug.Log("increase the counter");
+        Debug.Log(">>> setInteractable(): Increase the counter");
         CountPlantButton.interactable=true;
         CountPlantButton.onClick.Invoke();
-        CountPlantButton.interactable=false;        
+        CountPlantButton.interactable=false;  
+
+        // Disable Image Tracking      
         var config = NRSessionManager.Instance.NRSessionBehaviour.SessionConfig;
         config.ImageTrackingMode = TrackableImageFindingMode.DISABLE;
         NRSessionManager.Instance.SetConfiguration(config);
-        Debug.Log("Disable Image Tracking");
+        Debug.Log(">>> setInteractable(): Disable Image Tracking");
         GameObject FitToScan=GameObject.Find("FitToScan");  
         FitToScan.SetActive(false);
         GameObject ButtonImageScan=GameObject.Find("ScanImage");  
         Button button=ButtonImageScan.GetComponent<Button>();
         button.interactable=true;
+        Debug.Log(">>> setInteractable(): Scan Image Button is now interactable again");
        } 
         
     }
