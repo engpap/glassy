@@ -64,6 +64,7 @@ public class ChangeCard : MonoBehaviour
     void ChangeImage(string buttonName){
         
         if(buttonName=="Details"){
+            Debug.Log(">>> ExploreMode: Clicked Deatails Button");
             Console.WriteLine("Details button is selected");
             hasDetailsButtonClicked=!hasDetailsButtonClicked;
             setActive_DetailsFunctionality(hasDetailsButtonClicked);
@@ -73,6 +74,7 @@ public class ChangeCard : MonoBehaviour
             
         }
         if(buttonName=="Evolution"){
+            Debug.Log(">>> ExploreMode: Clicked Evolution Button");
             Console.WriteLine("Evolution button is selected");
             hasEvolutionButtonClicked=!hasEvolutionButtonClicked;
             setActive_EvolutionFunctionality(hasEvolutionButtonClicked);
@@ -82,6 +84,7 @@ public class ChangeCard : MonoBehaviour
             
         }
         if(buttonName=="Health"){
+            Debug.Log(">>> ExploreMode: Clicked Health Button");
             Console.WriteLine("Health button is selected");
             hasHealthButtonClicked=!hasHealthButtonClicked;
             setActive_HealthFunctionality(hasHealthButtonClicked);
