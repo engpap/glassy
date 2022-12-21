@@ -8,10 +8,12 @@ public class mainMenu : MonoBehaviour
   public void PlayGame(){
     SceneManager.LoadScene(1);
     Debug.Log(">>> Play Scene loaded!");
+    Debug.LogWarning("This is a test");
   }
   public void ExploreGame(){
     SceneManager.LoadScene(2);
     Debug.Log(">>> Explore Scene loaded!");
+    Debug.LogWarning("This is a testExplore");
   }
 
   public void BacktoMenu(){
