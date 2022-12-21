@@ -11,6 +11,12 @@ public class TrackingImageVisualizer : MonoBehaviour
         public Image image;
         public Sprite iris, salvia, frassino, weepingwillow,papavero;
         private int count=0;
+
+        public void Start(){
+            var config = NRSessionManager.Instance.NRSessionBehaviour.SessionConfig;
+            config.ImageTrackingMode = TrackableImageFindingMode.DISABLE;
+            NRSessionManager.Instance.SetConfiguration(config);
+        }
         public void Update()
         {
             if(Image!=null){
@@ -33,9 +39,6 @@ public class TrackingImageVisualizer : MonoBehaviour
                 return;
             GameObject FitToScan=GameObject.Find("FitToScan");  
             FitToScan.SetActive(false);
-            var config = NRSessionManager.Instance.NRSessionBehaviour.SessionConfig;
-            config.ImageTrackingMode = TrackableImageFindingMode.DISABLE;
-            NRSessionManager.Instance.SetConfiguration(config);
             }
             
         }
@@ -44,6 +47,9 @@ public class TrackingImageVisualizer : MonoBehaviour
         Playbutton.interactable=true;
         Playbutton.onClick.Invoke();
         Playbutton.interactable=false;
+        var config = NRSessionManager.Instance.NRSessionBehaviour.SessionConfig;
+        config.ImageTrackingMode = TrackableImageFindingMode.DISABLE;
+        NRSessionManager.Instance.SetConfiguration(config);
                 
        } 
         
