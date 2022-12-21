@@ -11,6 +11,7 @@ public class TrackingImageVisualizer : MonoBehaviour
         public Image ImageToFind;
         public Sprite iris, salvia, frassino, weepingwillow,papavero;
         private int count=0;
+        public GameObject cube;
 
         public void Start(){
             var config = NRSessionManager.Instance.NRSessionBehaviour.SessionConfig;
@@ -20,9 +21,8 @@ public class TrackingImageVisualizer : MonoBehaviour
         }
         public void Update()
         {
-
             if(Image!=null){
-               
+                cube.SetActive(true);
                 if((Image.GetDataBaseIndex()==0) && (ImageToFind.sprite==salvia)){
                     Debug.Log(">>> "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
                     setInteractable();
@@ -55,6 +55,9 @@ public class TrackingImageVisualizer : MonoBehaviour
                 }     
                 return;
 
+            }
+            else{
+                cube.SetActive(false);
             }
             
         }
