@@ -10,8 +10,6 @@ public class TrackingImageVisualizer : MonoBehaviour
         public Button CountPlantButton;
         public Image ImageToFind;
         public Sprite iris, salvia, frassino, weepingwillow,papavero;
-        private int count=0;
-        public GameObject cube;
 
         public void Start(){
             DisableImageTracking();

@@ -34,13 +34,14 @@ namespace NRKernal.NRExamples
 
 
         public void Start(){
+            initHasAlreadyBeenRecognized();
+        }
+
+        public void initHasAlreadyBeenRecognized(){
             for (int i = 0; i < 10;i++){
                 hasAlreadyBeenRecognized[i]=false;
             }
             Debug.Log(" TrackingImageExampleController, Start(): hasAlreadyBeenRecognized Dictionary initialized!" );
-        
-
-
         }
 
         /// <summary> Updates this object. </summary>
@@ -70,6 +71,9 @@ namespace NRKernal.NRExamples
 
                         Destroy(visualizer.gameObject);
                         Debug.Log(">>> TrackingImageExampleController, Update(): in if; Destroyed Visualizer");
+                    }
+                    else{
+                         Debug.Log(">>> TrackingImageExampleController, Update(): Image already recognized!");
                     }
 
                 }
