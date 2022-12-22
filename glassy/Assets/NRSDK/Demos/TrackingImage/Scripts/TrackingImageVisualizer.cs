@@ -11,11 +11,12 @@ public class TrackingImageVisualizer : MonoBehaviour
         private Image ImageToFind;
         private Sprite iris, salvia, frassino, weepingwillow,papavero;
         public GameObject principal;
+        public bool isPlayMode;
 
         public void Start(){
             DisableImageTracking();
             Debug.Log(">>> TrackingImageVisualizer, Start(): Disabled Image Tracking at start of Visualizer");
-            try{
+            if(isPlayMode){
                 GameObject buttonCountPlant = principal.transform.Find("CountPlant").gameObject;
                 CountPlantButton=buttonCountPlant.GetComponent<Button>();
                 GameObject findImage=principal.transform.Find("ImageToFind").gameObject;
@@ -25,7 +26,7 @@ public class TrackingImageVisualizer : MonoBehaviour
                 frassino=principal.transform.Find("SpriteFraxinus").gameObject.GetComponent<Image>().sprite;
                 weepingwillow=principal.transform.Find("SpriteWeepingwillow").gameObject.GetComponent<Image>().sprite;
                 papavero=principal.transform.Find("SpritePapaver").gameObject.GetComponent<Image>().sprite;
-            }catch{
+            }else{
 
             }
         }
