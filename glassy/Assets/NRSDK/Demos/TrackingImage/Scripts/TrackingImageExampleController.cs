@@ -65,12 +65,12 @@ namespace NRKernal.NRExamples
                         TrackingImageVisualizer visualizer = (TrackingImageVisualizer)Instantiate(TrackingImageVisualizerPrefab, image.GetCenterPose().position, image.GetCenterPose().rotation);
                         visualizer.Image = image;
                         visualizer.transform.parent = transform;
-                        Debug.Log(">>> TrackingImageExampleController, Update(): Created new Visualizer!");
+                        //Debug.Log(">>> TrackingImageExampleController, Update(): Created new Visualizer!");
 
                         hasAlreadyBeenRecognized[image.GetDataBaseIndex()] = visualizer.incrementCounter();
 
                         Destroy(visualizer.gameObject);
-                        Debug.Log(">>> TrackingImageExampleController, Update(): in if; Destroyed Visualizer");
+                        //Debug.Log(">>> TrackingImageExampleController, Update(): in if; Destroyed Visualizer");
                     }
                     else{
                          Debug.Log(">>> TrackingImageExampleController, Update(): Image already recognized!");

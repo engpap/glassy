@@ -74,8 +74,8 @@ public class TrackingImageVisualizer : MonoBehaviour
                     return true;
                 } 
                 else{
-                    Debug.Log(">>> Recognized wrong plant!");
-                    Debug.Log(">>> State of Image Tracking: "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
+                    //Debug.Log(">>> Recognized wrong plant!");
+                    //Debug.Log(">>> State of Image Tracking: "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
                     return false;
                 }
             }else{
