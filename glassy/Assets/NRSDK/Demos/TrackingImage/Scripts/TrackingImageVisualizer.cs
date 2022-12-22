@@ -7,20 +7,36 @@ using UnityEngine.UI;
 public class TrackingImageVisualizer : MonoBehaviour
     {
         public NRTrackableImage Image;
-        public Button CountPlantButton;
-        public Image ImageToFind;
-        public Sprite iris, salvia, frassino, weepingwillow,papavero;
+        private Button CountPlantButton;
+        private Image ImageToFind;
+        private Sprite iris, salvia, frassino, weepingwillow,papavero;
+        public GameObject principal;
 
         public void Start(){
             DisableImageTracking();
             Debug.Log(">>> TrackingImageVisualizer, Start(): Disabled Image Tracking at start of Visualizer");
+            try{
+                GameObject buttonCountPlant = principal.transform.Find("CountPlant").gameObject;
+                CountPlantButton=buttonCountPlant.GetComponent<Button>();
+                GameObject findImage=principal.transform.Find("ImageToFind").gameObject;
+                ImageToFind=findImage.GetComponent<Image>();
+                iris=principal.transform.Find("SpriteIris").gameObject.GetComponent<Image>().sprite;
+                salvia=principal.transform.Find("SpriteSalvia").gameObject.GetComponent<Image>().sprite;
+                frassino=principal.transform.Find("SpriteFraxinus").gameObject.GetComponent<Image>().sprite;
+                weepingwillow=principal.transform.Find("SpriteWeepingwillow").gameObject.GetComponent<Image>().sprite;
+                papavero=principal.transform.Find("SpritePapaver").gameObject.GetComponent<Image>().sprite;
+            }catch{
+
+            }
         }
         public void Update()
         {
+           
         }
 
 
         public bool incrementCounter(){
+            
             if(Image!=null){
                 if((Image.GetDataBaseIndex()==0) && (ImageToFind.sprite==salvia)){
                     //Debug.Log(">>> Index 0, State of Image Tracking: "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
@@ -92,5 +108,8 @@ public class TrackingImageVisualizer : MonoBehaviour
         config.ImageTrackingMode = TrackableImageFindingMode.DISABLE;
         NRSessionManager.Instance.SetConfiguration(config);
        }
+
+      
         
     }
+
