@@ -17,62 +17,65 @@ public class TrackingImageVisualizer : MonoBehaviour
             var config = NRSessionManager.Instance.NRSessionBehaviour.SessionConfig;
             config.ImageTrackingMode = TrackableImageFindingMode.DISABLE;
             NRSessionManager.Instance.SetConfiguration(config);
-            Debug.Log(">>> Disable Image Tracking at start of Visualizer");
+            Debug.Log(">>> TrackingImageVisualizer, Start(): Disabled Image Tracking at start of Visualizer");
         }
         public void Update()
         {
+        }
+
+
+        public void incrementCounter(){
             if(Image!=null){
-                cube.SetActive(true);
                 if((Image.GetDataBaseIndex()==0) && (ImageToFind.sprite==salvia)){
-                    Debug.Log(">>> "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
+                    Debug.Log(">>> Index 0, State of Image Tracking: "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
                     setInteractable();
                     Debug.Log(">>> Recognized image, database index 0 ");
-                    Debug.Log(">>> Index 0:"+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
+                    Debug.Log(">>> Index 0, State of Image Tracking: "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
                 }            
-                if((Image.GetDataBaseIndex()==1) && (ImageToFind.sprite==papavero)){
-                    Debug.Log(">>> "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
+                else if((Image.GetDataBaseIndex()==1) && (ImageToFind.sprite==papavero)){
+                    Debug.Log(">>> Index 1, State of Image Tracking: "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
                     setInteractable();
                     Debug.Log(">>> Recognized image, database index 1 ");
-                    Debug.Log(">>> Index 1:"+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
+                    Debug.Log(">>> Index 1, State of Image Tracking: "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
                 }
-                if((Image.GetDataBaseIndex()==2) && (ImageToFind.sprite==frassino)){
-                    Debug.Log(">>> "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
+                else if((Image.GetDataBaseIndex()==2) && (ImageToFind.sprite==frassino)){
+                    Debug.Log(">>> Index 2, State of Image Tracking: "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
                     setInteractable();
                     Debug.Log(">>> Recognized image, database index 2 ");
-                    Debug.Log(">>> Index 2:"+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
+                    Debug.Log(">>> Index 2, State of Image Tracking: "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
                 }
-                if((Image.GetDataBaseIndex()==3) && (ImageToFind.sprite==weepingwillow)) {
-                    Debug.Log(">>> "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
+                else if((Image.GetDataBaseIndex()==3) && (ImageToFind.sprite==weepingwillow)) {
+                    Debug.Log(">>> Index 3, State of Image Tracking: "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
                     setInteractable();
                     Debug.Log(">>> Recognized image, database index 3 ");
-                     Debug.Log(">>> Index 3:"+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
+                     Debug.Log(">>> Index 3, State of Image Tracking: "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
                 }
-                if((Image.GetDataBaseIndex()==4) && (ImageToFind.sprite==iris)) {
-                    Debug.Log(">>> "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
+                else if((Image.GetDataBaseIndex()==4) && (ImageToFind.sprite==iris)) {
+                    Debug.Log(">>> Index 4, State of Image Tracking: "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
                     setInteractable();
                     Debug.Log(">>> Recognized image, database index 4 ");
-                    Debug.Log(">>> Index 4:"+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
-                }     
-                return;
+                    Debug.Log(">>> Index 4, State of Image Tracking: "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
+                } 
+                else{
+                    Debug.Log(">>> Recognized wrong plant!");
+                    Debug.Log(">>> State of Image Tracking: "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
+                }
 
+            return;
             }
-            else{
-                cube.SetActive(false);
-            }
-            
         }
 
        public void setInteractable(){
-        Debug.Log(">>> setInteractable(): Increase the counter");
         CountPlantButton.interactable=true;
         CountPlantButton.onClick.Invoke();
         CountPlantButton.interactable=false;  
-
+        Debug.Log(">>> setInteractable(): Counter increased!");
         // Disable Image Tracking      
-        var config = NRSessionManager.Instance.NRSessionBehaviour.SessionConfig;
-        config.ImageTrackingMode = TrackableImageFindingMode.DISABLE;
-        NRSessionManager.Instance.SetConfiguration(config);
-        Debug.Log(">>> setInteractable(): Disable Image Tracking");
+        //var config = NRSessionManager.Instance.NRSessionBehaviour.SessionConfig;
+        //config.ImageTrackingMode = TrackableImageFindingMode.DISABLE;
+        //NRSessionManager.Instance.SetConfiguration(config);
+        //Debug.Log(">>> setInteractable(): Disable Image Tracking");
+
         GameObject FitToScan=GameObject.Find("FitToScan");  
         FitToScan.SetActive(false);
         GameObject ButtonImageScan=GameObject.Find("ScanImage");  

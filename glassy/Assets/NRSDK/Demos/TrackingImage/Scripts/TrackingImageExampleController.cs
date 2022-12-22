@@ -40,7 +40,7 @@ namespace NRKernal.NRExamples
             }
 #endif
             // Get updated augmented images for this frame.
-            NRFrame.GetTrackables<NRTrackableImage>(m_TempTrackingImages, NRTrackableQueryFilter.New);
+            NRFrame.GetTrackables<NRTrackableImage>(m_TempTrackingImages, NRTrackableQueryFilter.All);
 
             // Create visualizers and anchors for updated augmented images that are tracking and do not previously
             // have a visualizer. Remove visualizers for stopped images.
@@ -50,21 +50,32 @@ namespace NRKernal.NRExamples
                 m_Visualizers.TryGetValue(image.GetDataBaseIndex(), out visualizer);
                 if (image.GetTrackingState() != TrackingState.Stopped && visualizer == null)
                 {
-                    NRDebugger.Info("Create new TrackingImageVisualizer!");
+                    //NRDebugger.Info("Create new TrackingImageVisualizer!");
                     // Create an anchor to ensure that NRSDK keeps tracking this augmented image.
-                    Debug.Log(">>> TrackingImageExampleController: in if ");
                     visualizer = (TrackingImageVisualizer)Instantiate(TrackingImageVisualizerPrefab, image.GetCenterPose().position, image.GetCenterPose().rotation);
                     visualizer.Image = image;
                     visualizer.transform.parent = transform;
                     m_Visualizers.Add(image.GetDataBaseIndex(), visualizer);
+                    Debug.Log(">>> TrackingImageExampleController, Update(): Created new Visualizer!");
+
+                    //CUSTOM CODE
+                    visualizer.incrementCounter();
+                    m_Visualizers.Remove(image.GetDataBaseIndex());
+                    Destroy(visualizer.gameObject);
+                    Debug.Log(">>> TrackingImageExampleController, Update(): in if; Destroyed Visualizer");
+                    // END CUSTOM CODE
+
+                    //OPTIONAL TO REMOVE COMMENT IF PREVIOUS CODE DOES NOT WORK --> if tracking images remain in memory!!
+                    m_TempTrackingImages.Clear();
+                    Debug.Log(">>> TrackingImageExampleController, Update(): in if; Cleared m_TempTrackingImages List");
+                    
                 }
                 else if (image.GetTrackingState() == TrackingState.Stopped && visualizer != null)
                 {   
-                    Debug.Log(">>> TrackingImageExampleController: in elsif ");
+                    Debug.Log(">>> TrackingImageExampleController, Update(): in elsif");
                     m_Visualizers.Remove(image.GetDataBaseIndex());
                     Destroy(visualizer.gameObject);
                 }
-
               //  FitToScanOverlay.SetActive(false);
             }
         }
@@ -75,7 +86,8 @@ namespace NRKernal.NRExamples
             var config = NRSessionManager.Instance.NRSessionBehaviour.SessionConfig;
             config.ImageTrackingMode = TrackableImageFindingMode.ENABLE;
             NRSessionManager.Instance.SetConfiguration(config);
-            Debug.Log(">>> Enable Image tracking");
+            Debug.Log(">>> TrackingImageExampleController: Image Tracking Enabled through Scan Button");
+            Update();
         }
 
         /// <summary> Disables the image tracking. </summary>
@@ -84,7 +96,7 @@ namespace NRKernal.NRExamples
             var config = NRSessionManager.Instance.NRSessionBehaviour.SessionConfig;
             config.ImageTrackingMode = TrackableImageFindingMode.DISABLE;
             NRSessionManager.Instance.SetConfiguration(config);
-            Debug.Log(">>> Disable Image tracking");
+            Debug.Log(">>> TrackingImageExampleController: Image Tracking Disabled through 'X' Button of Scanning Mode");
         }
     }
 }
