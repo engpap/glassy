@@ -84,7 +84,7 @@ public class GPSLocation : MonoBehaviour
             // Access granted and location value could be retrieved
             //Call UpdateGPSData first time after 0.5sec and then call UpdateGPSData after 1 sec and repeat it.
           
-            InvokeRepeating("UpdateGPSData", 0.5f, 5f);
+            InvokeRepeating("UpdateGPSData", 0.5f, 2f);
 
         }
 
@@ -97,13 +97,24 @@ public class GPSLocation : MonoBehaviour
     {
         if (Input.location.status == LocationServiceStatus.Running)
         {
-        latitude =Input.location.lastData.latitude;
-        longitude=Input.location.lastData.longitude;
+        //latitude =Input.location.lastData.latitude;
+        //longitude=Input.location.lastData.longitude;
+        latitude=45.484935f;
+        longitude=9.19635f;
         posx=((longitude-coordinate[0].longitude)/deltalong)*passix;
         posy=((latitude-coordinate[3].latitude)/deltalat)*passiy;
         RectTransform rectT=pointer.GetComponent<RectTransform>();
         Vector3 newPos = new Vector3(posx-366.665f,posy-275,0);
         pointer.transform.localPosition = newPos;
+        /*if(PlayScript.Instance.HintPinPosition){
+            
+            if(PlayScript.Instance.coordinate[PlayScript.Instance.count].latitude-0.000445f<=latitude<=PlayScript.Instance.coordinate[PlayScript.Instance.count].latitude+0.000445f)
+                if(PlayScript.Instance.coordinate[PlayScript.Instance.count].longitude-0.000648f<=longitude<=PlayScript.Instance.coordinate[PlayScript.Instance.count].longitude+0.000648f)
+                    {    
+                        pointer.GetComponent<Image>().color=new Color32(255,0,0,255);
+                    }
+
+        }*/
         }
     
     }//end of UpdateGPSData
