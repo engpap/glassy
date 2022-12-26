@@ -17,9 +17,11 @@ public class TrackingImageVisualizer : MonoBehaviour
             DisableImageTracking();
             Debug.Log(">>> TrackingImageVisualizer, Start(): Disabled Image Tracking at start of Visualizer");
             if(isPlayMode){
-                GameObject buttonCountPlant = principal.transform.Find("CountPlant").gameObject;
+                GameObject playmodeview=principal.transform.Find("PlayModeView").gameObject;
+                GameObject buttonCountPlant = playmodeview.transform.Find("CountPlant").gameObject;
                 CountPlantButton=buttonCountPlant.GetComponent<Button>();
-                GameObject findImage=principal.transform.Find("ImageToFind").gameObject;
+                GameObject plantview=principal.transform.Find("PlantView").gameObject;
+                GameObject findImage=plantview.transform.Find("ImageToFind").gameObject;
                 ImageToFind=findImage.GetComponent<Image>();
                 iris=principal.transform.Find("SpriteIris").gameObject.GetComponent<Image>().sprite;
                 salvia=principal.transform.Find("SpriteSalvia").gameObject.GetComponent<Image>().sprite;
@@ -109,7 +111,6 @@ public class TrackingImageVisualizer : MonoBehaviour
         config.ImageTrackingMode = TrackableImageFindingMode.DISABLE;
         NRSessionManager.Instance.SetConfiguration(config);
        }
-
       
         
     }

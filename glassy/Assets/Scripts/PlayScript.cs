@@ -14,7 +14,10 @@ public struct Coordinate
 
 public class PlayScript : MonoBehaviour
 {
-    private int count;
+    public static PlayScript Instance {set;get;}
+
+    bool HintPinPosition;
+    int count;
     public Button countPlant;
     public TMP_Text buttonText;
     public Image image;
@@ -24,6 +27,9 @@ public class PlayScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        HintPinPosition=false;
+        Instance=this;
+        DontDestroyOnLoad(gameObject);
         coordinate[0].latitude=45.484835f;   //SALVIA RUSSA
         coordinate[0].longitude=9.193702f;
         coordinate[1].latitude=45.483627f;   //PAPAVERO
@@ -48,6 +54,7 @@ public class PlayScript : MonoBehaviour
         FindObject(this,"Quad3_red").SetActive(false);
         FindObject(this,"Quad4_black").SetActive(false);
         FindObject(this,"Quad4_red").SetActive(false);
+        HintPinPosition=false;
 
         GameObject panelRedArea=FindObject(this,"panel_hint3");
         Button button3=panelRedArea.GetComponent<Button>();
@@ -141,12 +148,11 @@ public class PlayScript : MonoBehaviour
     }
     
     public void ColoredPinPosition(){
+
         GameObject panelColorPin=FindObject(this,"panel_hint2");
         Button button2=panelColorPin.GetComponent<Button>();
         button2.interactable=false;
-        GameObject pointer=GameObject.Find("pointer");
-         
-         
+        HintPinPosition=true;    
     }
 
     
