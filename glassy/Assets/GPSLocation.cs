@@ -22,14 +22,19 @@ public class GPSLocation : MonoBehaviour
     int passix,passiy;
     public GameObject pointer;
     Coordinate[] coordinate={new Coordinate(),new Coordinate(),new Coordinate(),new Coordinate()};
-
+    Coordinate[] plantCoordinate;
+    
     
 
     private void Start()
     {
         RectTransform rt = map.rectTransform;
+        
+        
         width=rt.rect.width;
         height=rt.rect.height;
+        //Debug.Log("WIDTH "+width);
+        //Debug.Log("HEIGHT "+height);
         coordinate[0].latitude=45.48601f; //angolo in alto a sinistra
         coordinate[0].longitude=9.18942f;
         coordinate[1].latitude=45.48601f;//angolo in alto a destra
@@ -42,9 +47,14 @@ public class GPSLocation : MonoBehaviour
         deltalong=coordinate[1].longitude-coordinate[0].longitude; //6.13e-03
         passix=(int)width;
         passiy=(int)height;
-        StartCoroutine(GPSLoc());
+        //InvokeRepeating("UpdateGPSData", 0.5f, 2f);
+        //StartCoroutine(GPSLoc());
         
     }//end of Start
+
+    public void Update(){
+       // UpdateGPSData();
+    }
 
     IEnumerator GPSLoc()
     {
@@ -97,24 +107,30 @@ public class GPSLocation : MonoBehaviour
     {
         if (Input.location.status == LocationServiceStatus.Running)
         {
-        //latitude =Input.location.lastData.latitude;
-        //longitude=Input.location.lastData.longitude;
-        latitude=45.484935f;
-        longitude=9.19635f;
+        latitude =Input.location.lastData.latitude;
+        longitude=Input.location.lastData.longitude;
+        latitude=45.485030f;
+        longitude=9.193740f;
         posx=((longitude-coordinate[0].longitude)/deltalong)*passix;
         posy=((latitude-coordinate[3].latitude)/deltalat)*passiy;
         RectTransform rectT=pointer.GetComponent<RectTransform>();
         Vector3 newPos = new Vector3(posx-366.665f,posy-275,0);
         pointer.transform.localPosition = newPos;
-        /*if(PlayScript.Instance.HintPinPosition){
+        Debug.Log("pos x = "+pointer.transform.localPosition.x);
+        Debug.Log("pos y = "+pointer.transform.localPosition.y);
+        
+        if(PlayScript.Instance.getHintPinPosition()){
             
-            if(PlayScript.Instance.coordinate[PlayScript.Instance.count].latitude-0.000445f<=latitude<=PlayScript.Instance.coordinate[PlayScript.Instance.count].latitude+0.000445f)
-                if(PlayScript.Instance.coordinate[PlayScript.Instance.count].longitude-0.000648f<=longitude<=PlayScript.Instance.coordinate[PlayScript.Instance.count].longitude+0.000648f)
+            if(PlayScript.Instance.getCoordinate()[PlayScript.Instance.getCount()].latitude-0.000445f<=latitude && latitude<=PlayScript.Instance.getCoordinate()[PlayScript.Instance.getCount()].latitude+0.000445f)
+                if(PlayScript.Instance.getCoordinate()[PlayScript.Instance.getCount()].longitude-0.000648f<=longitude && longitude<=PlayScript.Instance.getCoordinate()[PlayScript.Instance.getCount()].longitude+0.000648f)
                     {    
                         pointer.GetComponent<Image>().color=new Color32(255,0,0,255);
                     }
 
-        }*/
+            //Debug.Log("Latitude: "+PlayScript.Instance.getCoordinate()[PlayScript.Instance.getCount()].latitude);
+            //Debug.Log("Longitude: "+PlayScript.Instance.getCoordinate()[PlayScript.Instance.getCount()].longitude);     
+
+        }
         }
     
     }//end of UpdateGPSData

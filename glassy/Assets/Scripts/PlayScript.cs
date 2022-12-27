@@ -175,5 +175,17 @@ public class PlayScript : MonoBehaviour
     return number;
 }
 
+    public bool getHintPinPosition(){
+        return HintPinPosition;
+    }
+
+    public Coordinate[] getCoordinate(){
+        return coordinate;
+    }
+
+    public int getCount(){
+        return count;
+    }
+
   
 }
