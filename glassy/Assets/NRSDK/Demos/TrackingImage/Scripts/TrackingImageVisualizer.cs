@@ -88,30 +88,50 @@ public class TrackingImageVisualizer : MonoBehaviour
             
         }
 
-       public void setInteractable(){
-        CountPlantButton.interactable=true;
-        CountPlantButton.onClick.Invoke();
-        CountPlantButton.interactable=false;  
-        Debug.Log(">>> setInteractable(): Counter increased!");
+        public void setInteractable(){
+            CountPlantButton.interactable=true;
+            CountPlantButton.onClick.Invoke();
+            CountPlantButton.interactable=false;  
+            Debug.Log(">>> setInteractable(): Counter increased!");
 
-        DisableImageTracking();
-        Debug.Log(">>> setInteractable(): Image Tracking disabled!");
+            DisableImageTracking();
+            Debug.Log(">>> setInteractable(): Image Tracking disabled!");
 
-        GameObject FitToScan=GameObject.Find("FitToScan");  
-        FitToScan.SetActive(false);
-        Debug.Log(">>> setInteractable(): FitToScan windows is now disctivated!");
-        GameObject ButtonImageScan=GameObject.Find("ScanImage");  
-        Button button=ButtonImageScan.GetComponent<Button>();
-        button.interactable=true;
-        Debug.Log(">>> setInteractable(): Scan Image Button is now interactable again!");
+            GameObject FitToScan=GameObject.Find("FitToScan");  
+            FitToScan.SetActive(false);
+            Debug.Log(">>> setInteractable(): FitToScan windows is now disctivated!");
+            GameObject ButtonImageScan=GameObject.Find("ScanImage");  
+            Button button=ButtonImageScan.GetComponent<Button>();
+            button.interactable=true;
+            Debug.Log(">>> setInteractable(): Scan Image Button is now interactable again!");
        } 
 
-       private void DisableImageTracking(){
+        private void DisableImageTracking(){
         var config = NRSessionManager.Instance.NRSessionBehaviour.SessionConfig;
         config.ImageTrackingMode = TrackableImageFindingMode.DISABLE;
         NRSessionManager.Instance.SetConfiguration(config);
        }
       
+        public void showContentBasedOnRecognizedImage(){
+            if(Image!=null){
+                if(Image.GetDataBaseIndex()==5){
+                    showContetOfLavander();
+                }            
+                else{
+                    Debug.Log(">>> For this plant Explore Mode is not supported yet!");
+                    return;
+                }
+            }else{
+                Debug.Log(">>> NRTrackableImage is null!");
+                return;
+            }
+
+        }
+
+        private void showContetOfLavander(){
+        
+        }
         
     }
+        
 
