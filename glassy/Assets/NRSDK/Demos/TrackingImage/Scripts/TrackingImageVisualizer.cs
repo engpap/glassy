@@ -16,6 +16,7 @@ public class TrackingImageVisualizer : MonoBehaviour
         public void Start(){
             DisableImageTracking();
             Debug.Log(">>> TrackingImageVisualizer, Start(): Disabled Image Tracking at start of Visualizer");
+            //Find the objects
             if(isPlayMode){
                 GameObject playmodeview=principal.transform.Find("PlayModeView").gameObject;
                 GameObject buttonCountPlant = playmodeview.transform.Find("CountPlant").gameObject;
@@ -37,7 +38,7 @@ public class TrackingImageVisualizer : MonoBehaviour
            
         }
 
-
+        //function that recognize image and increment the counter of plant found.
         public bool incrementCounter(){
             
             if(Image!=null){
