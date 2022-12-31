@@ -18,7 +18,9 @@ public class TrackingImageVisualizer : MonoBehaviour
             Debug.Log(">>> TrackingImageVisualizer, Start(): Disabled Image Tracking at start of Visualizer");
             if(isPlayMode){
                 GameObject playmodeview=principal.transform.Find("PlayModeView").gameObject;
+
                 GameObject buttonCountPlant = playmodeview.transform.Find("CountPlant").gameObject;
+
                 CountPlantButton=buttonCountPlant.GetComponent<Button>();
                 GameObject plantview=principal.transform.Find("PlantView").gameObject;
                 GameObject findImage=plantview.transform.Find("ImageToFind").gameObject;
@@ -29,7 +31,7 @@ public class TrackingImageVisualizer : MonoBehaviour
                 weepingwillow=principal.transform.Find("SpriteWeepingwillow").gameObject.GetComponent<Image>().sprite;
                 papavero=principal.transform.Find("SpritePapaver").gameObject.GetComponent<Image>().sprite;
             }else{
-
+               
             }
         }
         public void Update()
@@ -111,26 +113,7 @@ public class TrackingImageVisualizer : MonoBehaviour
         config.ImageTrackingMode = TrackableImageFindingMode.DISABLE;
         NRSessionManager.Instance.SetConfiguration(config);
        }
-      
-        public void showContentBasedOnRecognizedImage(){
-            if(Image!=null){
-                if(Image.GetDataBaseIndex()==5){
-                    showContetOfLavander();
-                }            
-                else{
-                    Debug.Log(">>> For this plant Explore Mode is not supported yet!");
-                    return;
-                }
-            }else{
-                Debug.Log(">>> NRTrackableImage is null!");
-                return;
-            }
-
-        }
-
-        private void showContetOfLavander(){
-        
-        }
+    
         
     }
         
