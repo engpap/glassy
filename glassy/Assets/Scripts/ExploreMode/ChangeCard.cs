@@ -9,18 +9,14 @@ public class ChangeCard : MonoBehaviour
     public Button DetailsButton;
     private bool hasDetailsButtonClicked = false;
     public GameObject DetailsPanel;
-    public Button OriginButton;
-    public Button FloweringButton;
-    public Button EtimologyButton;
 
     // Evolution Section
     public  Button EvolutionButton;
     private bool hasEvolutionButtonClicked = false;
     public GameObject EvolutionPanel;
+    
+    public GameObject EvolutionObjects;
 
-    public GameObject EvolutionModel_1;
-    public GameObject EvolutionModel_2;
-    public GameObject EvolutionModel_3;
 
 
 
@@ -28,8 +24,7 @@ public class ChangeCard : MonoBehaviour
     public Button HealthButton;
     private bool hasHealthButtonClicked = false;
     public GameObject HealthPanel;
-    public GameObject HealthModel_1;
-    public GameObject HealthModel_2;
+    public GameObject HealthObjects;
     // TODO: similar to Evolution
 
     // Common button for Evolution and Health sections
@@ -102,9 +97,6 @@ public class ChangeCard : MonoBehaviour
     private void setActive_DetailsFunctionality(bool state){
         hasDetailsButtonClicked=state;
         DetailsPanel.SetActive(state);
-        OriginButton.gameObject.SetActive(state);
-        FloweringButton.gameObject.SetActive(state);
-        EtimologyButton.gameObject.SetActive(state);
     }
 
     /**
@@ -113,10 +105,7 @@ public class ChangeCard : MonoBehaviour
     private void setActive_EvolutionFunctionality(bool state){
         hasEvolutionButtonClicked=state;
         EvolutionPanel.SetActive(state);
-        EvolutionModel_1.gameObject.SetActive(state);
-        EvolutionModel_2.gameObject.SetActive(state);
-        EvolutionModel_3.gameObject.SetActive(state);
-       
+        EvolutionObjects.SetActive(state);  
     }
 
 
@@ -126,10 +115,7 @@ public class ChangeCard : MonoBehaviour
     private void setActive_HealthFunctionality(bool state){
         hasHealthButtonClicked=state;
         HealthPanel.SetActive(state);
-        HealthModel_1.gameObject.SetActive(state);
-        HealthModel_2.gameObject.SetActive(state);
-        
-        
+        HealthObjects.SetActive(state);
     }
 
     private void setActive_ResetItemsButton(bool state){
