@@ -39,7 +39,7 @@ namespace NRKernal.NRExamples
         }
         */
 
-        
+
         /// <summary> Updates this object. </summary>
         public void Update()
         {
@@ -57,7 +57,7 @@ namespace NRKernal.NRExamples
             {
                 if(image.GetTrackingState() == TrackingState.Tracking && NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode == TrackableImageFindingMode.ENABLE ){
                         // If we are in explore mode, then the image is recognized and proper content shown.
-                    TrackingImageExploreVisualizer visualizer = (TrackingImageVisualizer)Instantiate(TrackingImageVisualizerPrefab, image.GetCenterPose().position, image.GetCenterPose().rotation);
+                    TrackingImageExploreVisualizer visualizer = (TrackingImageExploreVisualizer)Instantiate(TrackingImageExploreVisualizerPrefab, image.GetCenterPose().position, image.GetCenterPose().rotation);
                     visualizer.Image = image;
                     visualizer.transform.parent = transform;
 
