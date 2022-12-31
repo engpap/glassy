@@ -24,6 +24,7 @@ public class utility : MonoBehaviour
             
         }
     }
+    //PlayMode
     public void returnFromOption(){
         
         if(flagTutorial)
@@ -38,7 +39,7 @@ public class utility : MonoBehaviour
         }
 
     }
-
+    //PlayMode
     public void onClickOption(){
         GameObject tutorial=principal.transform.Find("Canvas_Tutorial").gameObject;
         if(tutorial.activeSelf)

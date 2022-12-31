@@ -45,7 +45,9 @@ public class PlayScript : MonoBehaviour
     }
 
     public void UpdateCount(){
+        //when you find a plant the counter in the upper left will be increased 
 
+        
         FindObject(this,"Quad1_black").SetActive(false);
         FindObject(this,"Quad1_red").SetActive(false);
         FindObject(this,"Quad2_black").SetActive(false);
@@ -56,6 +58,7 @@ public class PlayScript : MonoBehaviour
         FindObject(this,"Quad4_red").SetActive(false);
         HintPinPosition=false;
 
+        
         GameObject panelRedArea=FindObject(this,"panel_hint3");
         Button button3=panelRedArea.GetComponent<Button>();
         button3.interactable=true;
@@ -68,6 +71,7 @@ public class PlayScript : MonoBehaviour
         
         if(count<5){
             count++;
+            //change image on the plant to find box.
             if(count<4)
                 FindObject(this,"PlantFound").SetActive(true);
             buttonText.text = "Plant Found: "+count+"/5";
@@ -90,6 +94,7 @@ public class PlayScript : MonoBehaviour
             }
         }
         else{
+            //when u find all the plants a game complete object will be shown
             FindObject(this,"GameComplete").SetActive(true);
             FindObject(this,"PlayModeView").SetActive(false);
             FindObject(this,"PlantView").SetActive(false);
@@ -101,6 +106,7 @@ public class PlayScript : MonoBehaviour
         }
     }
 
+    //Red Area hint
     public void RedArea(){
         GameObject panelRedArea=GameObject.Find("panel_hint3");
         Button button=panelRedArea.GetComponent<Button>();
@@ -116,6 +122,7 @@ public class PlayScript : MonoBehaviour
 
     }
 
+    //Dark area hint
     public void DarkArea(){
         GameObject panelBlackArea=FindObject(this,"panel_hint1");
         Button button1=panelBlackArea.GetComponent<Button>();
@@ -146,7 +153,8 @@ public class PlayScript : MonoBehaviour
             }
 
     }
-    
+
+    //Colored position pin hint, we change the value of boolean value HintPinPosition and use it in GPSLocation script
     public void ColoredPinPosition(){
 
         GameObject panelColorPin=FindObject(this,"panel_hint2");
@@ -155,7 +163,7 @@ public class PlayScript : MonoBehaviour
         HintPinPosition=true;    
     }
 
-    
+    //Use this function to find an object (even if it isn't active)
     public static GameObject FindObject(PlayScript parent, string name)
     {
         Transform[] trs= parent.GetComponentsInChildren<Transform>(true);
@@ -167,6 +175,7 @@ public class PlayScript : MonoBehaviour
         return null;
     }
 
+    //generate random number except a value
     public static int RandomRangeExcept (int min, int max,int except ) {
         int number;
     do {

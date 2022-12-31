@@ -33,8 +33,7 @@ public class GPSLocation : MonoBehaviour
         
         width=rt.rect.width;
         height=rt.rect.height;
-        //Debug.Log("WIDTH "+width);
-        //Debug.Log("HEIGHT "+height);
+    
         coordinate[0].latitude=45.48601f; //angolo in alto a sinistra
         coordinate[0].longitude=9.18942f;
         coordinate[1].latitude=45.48601f;//angolo in alto a destra
@@ -48,7 +47,7 @@ public class GPSLocation : MonoBehaviour
         passix=(int)width;
         passiy=(int)height;
         //InvokeRepeating("UpdateGPSData", 0.5f, 2f);
-        //StartCoroutine(GPSLoc());
+        StartCoroutine(GPSLoc());
         
     }//end of Start
 
@@ -107,20 +106,21 @@ public class GPSLocation : MonoBehaviour
     {
         if (Input.location.status == LocationServiceStatus.Running)
         {
-        latitude =Input.location.lastData.latitude;
-        longitude=Input.location.lastData.longitude;
-        latitude=45.485030f;
-        longitude=9.193740f;
-        posx=((longitude-coordinate[0].longitude)/deltalong)*passix;
-        posy=((latitude-coordinate[3].latitude)/deltalat)*passiy;
+        latitude =Input.location.lastData.latitude; //latitude value
+        longitude=Input.location.lastData.longitude; //longitude value
+        //latitude=45.485030f; //fixed value for test
+        //longitude=9.193740f; //fixed value for test
+        posx=((longitude-coordinate[0].longitude)/deltalong)*passix; //formula for new x position for the pointer on the map view
+        posy=((latitude-coordinate[3].latitude)/deltalat)*passiy;    //formula for new y position for the pointer on the map view
         RectTransform rectT=pointer.GetComponent<RectTransform>();
-        Vector3 newPos = new Vector3(posx-366.665f,posy-275,0);
+        Vector3 newPos = new Vector3(posx-366.665f,posy-275,0);     
         pointer.transform.localPosition = newPos;
         Debug.Log("pos x = "+pointer.transform.localPosition.x);
         Debug.Log("pos y = "+pointer.transform.localPosition.y);
         
-        if(PlayScript.Instance.getHintPinPosition()){
+        if(PlayScript.Instance.getHintPinPosition()){  //Take boolean value of pin position from playscript 
             
+            //if you are close to the plant (50 meters) your pin position change color
             if(PlayScript.Instance.getCoordinate()[PlayScript.Instance.getCount()].latitude-0.000445f<=latitude && latitude<=PlayScript.Instance.getCoordinate()[PlayScript.Instance.getCount()].latitude+0.000445f)
                 if(PlayScript.Instance.getCoordinate()[PlayScript.Instance.getCount()].longitude-0.000648f<=longitude && longitude<=PlayScript.Instance.getCoordinate()[PlayScript.Instance.getCount()].longitude+0.000648f)
                     {    
