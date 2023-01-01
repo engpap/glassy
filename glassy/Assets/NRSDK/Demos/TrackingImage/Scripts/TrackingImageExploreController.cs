@@ -26,19 +26,19 @@ namespace NRKernal.NRExamples
         /// <summary> The temporary tracking images. </summary>
         private List<NRTrackableImage> m_TempTrackingImages = new List<NRTrackableImage>();
 
-
-    /*FOR TESTING WITHOUT GLASSES; TO REMOVE!!
+    /*
+    //FOR TESTING WITHOUT GLASSES; TO REMOVE!!
         private bool flag = true;
         public void Update(){
             if(flag){
                 TrackingImageExploreVisualizer visualizer = (TrackingImageExploreVisualizer)Instantiate(TrackingImageExploreVisualizerPrefab);
                 visualizer.showContentBasedOnRecognizedImage();
-                Debug.Log(">>> TrackingImageExploreVisualizer: Visualizer created and called method ");
+                Debug.Log(">>> TrackingImageExploreController: Visualizer created and called method ");
                 flag=!flag;
             }
         }
-        */
-
+    */
+    
 
         /// <summary> Updates this object. </summary>
         public void Update()

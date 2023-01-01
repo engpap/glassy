@@ -7,7 +7,10 @@ using UnityEngine.UI;
 public class TrackingImageExploreVisualizer : MonoBehaviour
     {
         public NRTrackableImage Image;
-
+        
+        public GameObject fitToScanCanvas;
+        public GameObject exploreCanvas;
+        public GameObject hideButton;
 
         public GameObject[] DetailsObjects;
         public Sprite[] LavanderDetailsSprites;
@@ -32,14 +35,26 @@ public class TrackingImageExploreVisualizer : MonoBehaviour
             DisableImageTracking();
             Debug.Log(">>> TrackingImageVisualizer, Start(): Disabled Image Tracking at start of Visualizer");
         }
+        */
 
         private void DisableImageTracking(){
         var config = NRSessionManager.Instance.NRSessionBehaviour.SessionConfig;
         config.ImageTrackingMode = TrackableImageFindingMode.DISABLE;
         NRSessionManager.Instance.SetConfiguration(config);
+        Debug.Log(">>> TrackingImageExploreVisualizer: Disabled Image Tracking after having recognized the plant!");
+
+       }
+
+/*
+       //TO USE ONLY WHEN GLASSES ARE NOT PRESENT
+      
+       public void showContentBasedOnRecognizedImage(){
+        showContentOfPlant("Lavander",LavanderDetailsSprites,LavanderHealthSprites);
        }
        */
-      
+
+
+
         public void showContentBasedOnRecognizedImage(){
             Debug.Log(">>> ShowContentBasedOnRecognizedImage:");
             if(Image!=null){
@@ -68,6 +83,14 @@ public class TrackingImageExploreVisualizer : MonoBehaviour
 
         private void showContentOfPlant(string plantName, Sprite[] PlantDetailsSprites, Sprite[] PlantHealthSprites){
             
+            // Image Tracking is disabled since we have recongnized the plant, se we now want to only display content of the plant
+            DisableImageTracking();
+
+            fitToScanCanvas.SetActive(false);
+            exploreCanvas.SetActive(true);
+            hideButton.SetActive(true);
+
+            
             // Set Details //TODO: refactor with loop on length
             DetailsObjects[0].GetComponent<Image>().sprite = PlantDetailsSprites[0];
             DetailsObjects[1].GetComponent<Image>().sprite = PlantDetailsSprites[1];
@@ -83,8 +106,6 @@ public class TrackingImageExploreVisualizer : MonoBehaviour
             HealthObjects[0].GetComponent<Image>().sprite = PlantHealthSprites[0];
             HealthObjects[1].GetComponent<Image>().sprite = PlantHealthSprites[1];
 
-            // TODO: Check if not disabling image tracking here is correct!
-            //DisableImageTracking();
         }
 
 
