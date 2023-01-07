@@ -14,14 +14,10 @@ namespace NRKernal.NRExamples
 
     /// <summary> Controller for TrackingImage example. </summary>
     [HelpURL("https://developer.nreal.ai/develop/unity/image-tracking")]
-    public class TrackingImageExampleController : MonoBehaviour
+    public class TrackingImageExploreController : MonoBehaviour
     {
         /// <summary> A prefab for visualizing an TrackingImage. </summary>
-        public TrackingImageVisualizer TrackingImageVisualizerPrefab;
-
-
-        /// <summary> The overlay containing the fit to scan user guide. </summary>
-        //public GameObject FitToScanOverlay;
+        public TrackingImageExploreVisualizer TrackingImageExploreVisualizerPrefab;
 
         /// <summary> The visualizers. </summary>
         private Dictionary<int, TrackingImageVisualizer> m_Visualizers
@@ -30,22 +26,20 @@ namespace NRKernal.NRExamples
         /// <summary> The temporary tracking images. </summary>
         private List<NRTrackableImage> m_TempTrackingImages = new List<NRTrackableImage>();
 
-        private Dictionary<int, bool> hasAlreadyBeenRecognized
-            = new Dictionary<int, bool>();
-
-        public bool isInPlayMode;
-
-        public void Start(){
-            initHasAlreadyBeenRecognized();
-        }
-
-        public void initHasAlreadyBeenRecognized(){
-            for (int i = 0; i < 10;i++){
-                hasAlreadyBeenRecognized[i]=false;
+    
+    //FOR TESTING WITHOUT GLASSES; TO REMOVE!!
+        private bool flag = true;
+        public void Update(){
+            if(flag){
+                TrackingImageExploreVisualizer visualizer = (TrackingImageExploreVisualizer)Instantiate(TrackingImageExploreVisualizerPrefab);
+                visualizer.showContentBasedOnRecognizedImage();
+                Debug.Log(">>> TrackingImageExploreController: Visualizer created and called method ");
+                flag=!flag;
             }
-            Debug.Log(" TrackingImageExampleController, Start(): hasAlreadyBeenRecognized Dictionary initialized!" );
         }
 
+    
+        /* USE THIS IN REAL ENVIORMENT, WHEN YOU HAVE GLASSES
         /// <summary> Updates this object. </summary>
         public void Update()
         {
@@ -62,35 +56,19 @@ namespace NRKernal.NRExamples
             foreach (var image in m_TempTrackingImages)
             {
                 if(image.GetTrackingState() == TrackingState.Tracking && NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode == TrackableImageFindingMode.ENABLE ){
-                    if(isInPlayMode){ // If we are in play mode, then the image once is recognized and is its turn the counter is incremented.
-                        if(hasAlreadyBeenRecognized[image.GetDataBaseIndex()]==false){
-                            TrackingImageVisualizer visualizer = (TrackingImageVisualizer)Instantiate(TrackingImageVisualizerPrefab, image.GetCenterPose().position, image.GetCenterPose().rotation);
-                            visualizer.Image = image;
-                            visualizer.transform.parent = transform;
-                            //Debug.Log(">>> TrackingImageExampleController, Update(): Created new Visualizer!");
+                        // If we are in explore mode, then the image is recognized and proper content shown.
+                    TrackingImageExploreVisualizer visualizer = (TrackingImageExploreVisualizer)Instantiate(TrackingImageExploreVisualizerPrefab, image.GetCenterPose().position, image.GetCenterPose().rotation);
+                    visualizer.Image = image;
+                    visualizer.transform.parent = transform;
 
-                            hasAlreadyBeenRecognized[image.GetDataBaseIndex()] = visualizer.incrementCounter();
-
-                            Destroy(visualizer.gameObject);
-                            //Debug.Log(">>> TrackingImageExampleController, Update(): in if; Destroyed Visualizer");
-                        }
-                        else{
-                            Debug.Log(">>> TrackingImageExampleController, Update(): Image already recognized!");
-                        }
-                    }
-                    else{ // If we are in explore mode, then the image is recognized and proper content shown.
-                        //TrackingImageVisualizer visualizer = (TrackingImageVisualizer)Instantiate(TrackingImageVisualizerPrefab, image.GetCenterPose().position, image.GetCenterPose().rotation);
-                        //visualizer.Image = image;
-                        //visualizer.transform.parent = transform;
-
-                        //visualizer.showContentBasedOnRecognizedImage();
-                        
-                        //Destroy(visualizer.gameObject);
-                    }
-
+                    visualizer.showContentBasedOnRecognizedImage();
+                    
+                    Destroy(visualizer.gameObject);
                 }
+
             }
         }
+*/
 
         /// <summary> Enables the image tracking. </summary>
         public void EnableImageTracking()
