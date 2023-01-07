@@ -46,7 +46,6 @@ public class GPSLocation : MonoBehaviour
         deltalong=coordinate[1].longitude-coordinate[0].longitude; //6.13e-03
         passix=(int)width;
         passiy=(int)height;
-        //InvokeRepeating("UpdateGPSData", 0.5f, 2f);
         StartCoroutine(GPSLoc());
         
     }//end of Start
