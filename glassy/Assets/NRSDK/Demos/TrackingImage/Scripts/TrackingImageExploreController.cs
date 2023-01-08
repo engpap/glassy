@@ -27,7 +27,8 @@ namespace NRKernal.NRExamples
         private List<NRTrackableImage> m_TempTrackingImages = new List<NRTrackableImage>();
 
     
-    //FOR TESTING WITHOUT GLASSES; TO REMOVE!!
+    //FOR TESTING WITHOUT GLASSES; TO REMOVE when not needed anymore.
+    /*
         private bool flag = true;
         public void Update(){
             if(flag){
@@ -37,9 +38,9 @@ namespace NRKernal.NRExamples
                 flag=!flag;
             }
         }
-
+*/
     
-        /* USE THIS IN REAL ENVIORMENT, WHEN YOU HAVE GLASSES
+        /* USE THIS IN REAL ENVIORMENT, WHEN YOU HAVE GLASSES*/
         /// <summary> Updates this object. </summary>
         public void Update()
         {
@@ -68,7 +69,6 @@ namespace NRKernal.NRExamples
 
             }
         }
-*/
 
         /// <summary> Enables the image tracking. </summary>
         public void EnableImageTracking()

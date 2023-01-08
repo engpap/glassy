@@ -46,12 +46,13 @@ public class TrackingImageExploreVisualizer : MonoBehaviour
        }
 
        //TO USE ONLY WHEN GLASSES ARE NOT PRESENT, ONLY ON UNITY
+       /*
        public void showContentBasedOnRecognizedImage(){
         showContentOfPlant("Lavander",LavanderDetailsSprites,LavanderHealthSprites);
-       }
+       }*/
        
 
-        /* USE THIS IN REAL ENVIORMENT, WHEN YOU HAVE GLASSES
+        /* USE THIS IN REAL ENVIORMENT, WHEN YOU HAVE GLASSES*/
 
         public void showContentBasedOnRecognizedImage(){
             Debug.Log(">>> ShowContentBasedOnRecognizedImage:");
@@ -78,7 +79,6 @@ public class TrackingImageExploreVisualizer : MonoBehaviour
             }
 
         }
-*/
         private void showContentOfPlant(string plantName, Sprite[] PlantDetailsSprites, Sprite[] PlantHealthSprites){
             
             // Image Tracking is disabled since we have recongnized the plant, se we now want to only display content of the plant
