@@ -17,6 +17,7 @@ namespace NRKernal
     [RequireComponent(typeof(Rigidbody))]
     public class NRGrabber : MonoBehaviour
     {
+        private Material[] originalMaterials;
         /// <summary> The grab button. </summary>
         public ControllerButton grabButton = ControllerButton.GRIP;
         /// <summary> The hand enum. </summary>
@@ -71,10 +72,47 @@ namespace NRKernal
             UpdateGrabbles();
         }
 
+        /// This a custom method that makes the object magenta when the it is touched by the hands.
+        private void HighilightObject(Collider other){
+            Debug.Log(">>> HighilightObject");
+
+            // Access the material of the collided object
+            Material material = new Material(Shader.Find("Standard"));
+            // Set the material's color to yellow.
+            material.color = Color.magenta;
+
+            // If it is the first time that has been colllided, then set the material;
+            if( this.originalMaterials==null)
+                this.originalMaterials = other.GetComponent<MeshRenderer>().materials;
+
+            Material[] materials = other.GetComponent<MeshRenderer>().materials;
+
+            // Check if the materials array has at least one element.
+            if (materials.Length > 0)
+            {
+                // The materials array has at least one element, so we can change the first material.
+                materials[0] = material;
+                // Assign the modified materials array back to the object's renderer.
+                other.GetComponent<MeshRenderer>().materials = materials;
+            }
+
+        }
+
+        /// This a custom method that removes color from the object the  when the it is no longer touched by the hands.
+         private void DisableHighilightObject(Collider other){
+            Debug.Log(">>> DisableHighilightObject");
+            other.GetComponent<MeshRenderer>().materials=this.originalMaterials;
+
+        }
+
+
+        
+
         /// <summary> Executes the 'trigger enter' action. </summary>
         /// <param name="other"> The other.</param>
         private void OnTriggerEnter(Collider other)
         {
+            HighilightObject(other);
             NRGrabbableObject grabble = other.GetComponent<NRGrabbableObject>() ?? other.GetComponentInParent<NRGrabbableObject>();
             if (grabble == null)
                 return;
@@ -91,7 +129,8 @@ namespace NRKernal
         /// <summary> Executes the 'trigger exit' action. </summary>
         /// <param name="other"> The other.</param>
         private void OnTriggerExit(Collider other)
-        {
+        {   
+            DisableHighilightObject(other);
             NRGrabbableObject grabble = other.GetComponent<NRGrabbableObject>() ?? other.GetComponentInParent<NRGrabbableObject>();
             if (grabble == null)
                 return;
