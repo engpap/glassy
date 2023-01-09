@@ -114,8 +114,8 @@ public class GPSLocation : MonoBehaviour
         RectTransform rectT=pointer.GetComponent<RectTransform>();
         Vector3 newPos = new Vector3(posx-366.665f,posy-275,0);     
         pointer.transform.localPosition = newPos;
-        Debug.Log("pos x = "+pointer.transform.localPosition.x);
-        Debug.Log("pos y = "+pointer.transform.localPosition.y);
+        //Debug.Log("pos x = "+pointer.transform.localPosition.x);
+        //Debug.Log("pos y = "+pointer.transform.localPosition.y);
         
         if(PlayScript.Instance.getHintPinPosition()){  //Take boolean value of pin position from playscript 
             
