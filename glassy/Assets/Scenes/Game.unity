@@ -2721,7 +2721,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TrackingImageVisualizerPrefab: {fileID: 707239279}
-  isInPlayMode: 0
+  isInPlayMode: 1
 --- !u!4 &297916961
 Transform:
   m_ObjectHideFlags: 0
