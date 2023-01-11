@@ -15,6 +15,11 @@ public class mainMenu : MonoBehaviour
     Debug.Log(">>> Explore Scene loaded!");
     Debug.LogWarning(">>> This is a testExplore");
   }
+  public void Test(){
+    SceneManager.LoadScene(3);
+    Debug.Log(">>> Explore Scene loaded!");
+    Debug.LogWarning(">>> This is a testExplore");
+  }
 
   public void BacktoMenu(){
     SceneManager.LoadScene(0);
