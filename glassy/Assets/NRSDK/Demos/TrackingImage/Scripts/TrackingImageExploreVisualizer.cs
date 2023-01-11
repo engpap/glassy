@@ -30,13 +30,6 @@ public class TrackingImageExploreVisualizer : MonoBehaviour
         public GameObject[] HealthGrabbableItems;
 
 
-        /* TODO: Check if not disabling image tracking here is correct!
-        public void Start(){
-            DisableImageTracking();
-            Debug.Log(">>> TrackingImageVisualizer, Start(): Disabled Image Tracking at start of Visualizer");
-        }
-        */
-
         private void DisableImageTracking(){
         var config = NRSessionManager.Instance.NRSessionBehaviour.SessionConfig;
         config.ImageTrackingMode = TrackableImageFindingMode.DISABLE;
@@ -54,28 +47,31 @@ public class TrackingImageExploreVisualizer : MonoBehaviour
 
         /* USE THIS IN REAL ENVIORMENT, WHEN YOU HAVE GLASSES*/
 
-        public void showContentBasedOnRecognizedImage(){
+        public bool showContentBasedOnRecognizedImage(){
             Debug.Log(">>> ShowContentBasedOnRecognizedImage:");
             if(Image!=null){
-                if(Image.GetDataBaseIndex()==5){
+                if(Image.GetDataBaseIndex()==0){
                     Debug.Log(">>> Showing Lavander content...");
                     showContentOfPlant("Lavander",LavanderDetailsSprites,LavanderHealthSprites);
+                    return true;
                 }
-                else if(Image.GetDataBaseIndex()==6){
+                else if(Image.GetDataBaseIndex()==1){
                     Debug.Log(">>> Showing Apple Tree content...");
                     showContentOfPlant("AppleTree",AppleTreeDetailsSprites,AppleTreeHealthSprites);
+                    return true;
                 }    
-                else if(Image.GetDataBaseIndex()==7){
+                else if(Image.GetDataBaseIndex()==2){
                     Debug.Log(">>> Showing Lotus content...");
                     showContentOfPlant("Lotus",LotusDetailsSprites,LotusHealthSprites);
+                    return true;
                 }          
                 else{
                     Debug.Log(">>> For this plant Explore Mode is not supported yet!");
-                    return;
+                    return false;
                 }
             }else{
                 Debug.Log(">>> NRTrackableImage is null!");
-                return;
+                return false;
             }
 
         }

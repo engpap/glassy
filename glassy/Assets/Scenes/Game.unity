@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2721,7 +2721,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TrackingImageVisualizerPrefab: {fileID: 707239279}
-  isInPlayMode: 1
 --- !u!4 &297916961
 Transform:
   m_ObjectHideFlags: 0
@@ -4716,8 +4715,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655793353707240a195aee929b80d41a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CountPlant: {fileID: 1144567119}
+  ImageToFind: {fileID: 1507748066}
+  iris: {fileID: 21300000, guid: 372d90261b5ddab43b7f48962b74d690, type: 3}
+  salvia: {fileID: 21300000, guid: 90a3a363177bd0c4d958d8ee766acc29, type: 3}
+  frassino: {fileID: 21300000, guid: 83de1cee767aaf14aa5f746c116db7eb, type: 3}
+  weepingwillow: {fileID: 21300000, guid: 837235cc6e2cf6548bdfde2cb06675c5, type: 3}
+  papavero: {fileID: 21300000, guid: 7111d386961723b49bd5cf6ce2b497ec, type: 3}
   principal: {fileID: 124388764}
-  isPlayMode: 1
+  ImageScan: {fileID: 960977914}
+  FitToScan: {fileID: 2126280460}
 --- !u!4 &707239280
 Transform:
   m_ObjectHideFlags: 0
@@ -4748,7 +4755,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114648109341009852, guid: fadada887bc7b3946bff1496ea5561c3, type: 3}
   m_PrefabInstance: {fileID: 1232378710}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1144567119}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -6826,6 +6833,11 @@ MonoBehaviour:
   OverrideBorderColor: 0
   BorderColor: {r: 1, g: 1, b: 1, a: 1}
   RelativeSize: 0
+--- !u!1 &1144567119 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1226809552012504, guid: fadada887bc7b3946bff1496ea5561c3, type: 3}
+  m_PrefabInstance: {fileID: 1232378710}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1168957416
 GameObject:
   m_ObjectHideFlags: 0

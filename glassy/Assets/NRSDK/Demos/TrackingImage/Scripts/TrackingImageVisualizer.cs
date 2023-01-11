@@ -7,43 +7,23 @@ using UnityEngine.UI;
 public class TrackingImageVisualizer : MonoBehaviour
     {
         public NRTrackableImage Image;
-        private Button CountPlantButton;
-        private Image ImageToFind;
-        private Sprite iris, salvia, frassino, weepingwillow,papavero;
+        public GameObject CountPlant;
+        public Image ImageToFind;
+        public Sprite iris, salvia, frassino, weepingwillow,papavero;
         public GameObject principal;
-        public bool isPlayMode;
+        public GameObject ImageScan,FitToScan;
 
-        public void Start(){
-            DisableImageTracking();
+        public TrackingImageVisualizer(){
             Debug.Log(">>> TrackingImageVisualizer, Start(): Disabled Image Tracking at start of Visualizer");
-            //Find the objects
-            if(isPlayMode){
-                GameObject playmodeview=principal.transform.Find("PlayModeView").gameObject;
-
-                GameObject buttonCountPlant = playmodeview.transform.Find("CountPlant").gameObject;
-
-                CountPlantButton=buttonCountPlant.GetComponent<Button>();
-                GameObject plantview=principal.transform.Find("PlantView").gameObject;
-                GameObject findImage=plantview.transform.Find("ImageToFind").gameObject;
-                ImageToFind=findImage.GetComponent<Image>();
-                iris=principal.transform.Find("SpriteIris").gameObject.GetComponent<Image>().sprite;
-                salvia=principal.transform.Find("SpriteSalvia").gameObject.GetComponent<Image>().sprite;
-                frassino=principal.transform.Find("SpriteFraxinus").gameObject.GetComponent<Image>().sprite;
-                weepingwillow=principal.transform.Find("SpriteWeepingwillow").gameObject.GetComponent<Image>().sprite;
-                papavero=principal.transform.Find("SpritePapaver").gameObject.GetComponent<Image>().sprite;
-            }else{
-               
-            }
         }
-        public void Update()
-        {
-           
-        }
+
 
         //function that recognize image and increment the counter of plant found.
         public bool incrementCounter(){
-            
+            Debug.Log(">>> incrementCounter(): This method has been called!");
             if(Image!=null){
+
+                Debug.Log(">>> incrementCounter(): index: "+Image.GetDataBaseIndex());
                 if((Image.GetDataBaseIndex()==0) && (ImageToFind.sprite==salvia)){
                     //Debug.Log(">>> Index 0, State of Image Tracking: "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
                     setInteractable();
@@ -80,7 +60,7 @@ public class TrackingImageVisualizer : MonoBehaviour
                     return true;
                 } 
                 else{
-                    //Debug.Log(">>> Recognized wrong plant!");
+                    Debug.Log(">>> Recognized wrong plant! You have to recognize: "+ImageToFind.sprite.ToString());
                     //Debug.Log(">>> State of Image Tracking: "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
                     return false;
                 }
@@ -92,20 +72,19 @@ public class TrackingImageVisualizer : MonoBehaviour
         }
 
         public void setInteractable(){
-            CountPlantButton.interactable=true;
-            CountPlantButton.onClick.Invoke();
-            CountPlantButton.interactable=false;  
+
+            CountPlant.GetComponent<Button>().interactable=true;
+            CountPlant.GetComponent<Button>().onClick.Invoke();
+            CountPlant.GetComponent<Button>().interactable=false;  
             Debug.Log(">>> setInteractable(): Counter increased!");
 
             DisableImageTracking();
             Debug.Log(">>> setInteractable(): Image Tracking disabled!");
-
-            GameObject FitToScan=GameObject.Find("FitToScan");  
+ 
             FitToScan.SetActive(false);
             Debug.Log(">>> setInteractable(): FitToScan windows is now disctivated!");
-            GameObject ButtonImageScan=GameObject.Find("ScanImage");  
-            Button button=ButtonImageScan.GetComponent<Button>();
-            button.interactable=true;
+            
+            ImageScan.GetComponent<Button>().interactable=true;
             Debug.Log(">>> setInteractable(): Scan Image Button is now interactable again!");
        } 
 

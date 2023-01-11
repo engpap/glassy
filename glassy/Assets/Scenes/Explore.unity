@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2722,6 +2722,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 557590373}
+  - component: {fileID: 557590374}
   m_Layer: 0
   m_Name: GrabbableItems
   m_TagString: Untagged
@@ -2746,6 +2747,19 @@ Transform:
   m_Father: {fileID: 956276365}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &557590374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557590372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e05c010122dafe541b323cc38d0cf9e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useRelative: 1
 --- !u!1001 &560469434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5650,6 +5664,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1744092993}
+        m_TargetAssemblyTypeName: HideContent, Assembly-CSharp
+        m_MethodName: HideGameObjects
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1036495542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8137,6 +8163,7 @@ GameObject:
   - component: {fileID: 1469862091}
   - component: {fileID: 1469862092}
   - component: {fileID: 1469862093}
+  - component: {fileID: 1469862094}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -8264,6 +8291,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemsCollector: {fileID: 956276366}
   handModelsManager: {fileID: 0}
+--- !u!114 &1469862094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469862086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e05c010122dafe541b323cc38d0cf9e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useRelative: 1
 --- !u!1 &1482522479
 GameObject:
   m_ObjectHideFlags: 0
