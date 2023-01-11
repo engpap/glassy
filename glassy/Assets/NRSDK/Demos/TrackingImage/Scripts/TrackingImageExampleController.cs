@@ -1,10 +1,10 @@
 ﻿/****************************************************************************
 * Copyright 2019 Nreal Techonology Limited. All rights reserved.
-*                                                                                                                                                          
-* This file is part of NRSDK.                                                                                                          
-*                                                                                                                                                           
-* https://www.nreal.ai/        
-* 
+*
+* This file is part of NRSDK.
+*
+* https://www.nreal.ai/
+*
 *****************************************************************************/
 
 namespace NRKernal.NRExamples
@@ -19,31 +19,32 @@ namespace NRKernal.NRExamples
         /// <summary> A prefab for visualizing an TrackingImage. </summary>
         public TrackingImageVisualizer TrackingImageVisualizerPrefab;
 
-
         /// <summary> The overlay containing the fit to scan user guide. </summary>
         //public GameObject FitToScanOverlay;
 
         /// <summary> The visualizers. </summary>
-        private Dictionary<int, TrackingImageVisualizer> m_Visualizers
-            = new Dictionary<int, TrackingImageVisualizer>();
+        private Dictionary<int, TrackingImageVisualizer> m_Visualizers =
+            new Dictionary<int, TrackingImageVisualizer>();
 
         /// <summary> The temporary tracking images. </summary>
         private List<NRTrackableImage> m_TempTrackingImages = new List<NRTrackableImage>();
 
-        private Dictionary<int, bool> hasAlreadyBeenRecognized
-            = new Dictionary<int, bool>();
+        private Dictionary<int, bool> hasAlreadyBeenRecognized = new Dictionary<int, bool>();
 
-        public bool isInPlayMode;
-
-        public void Start(){
+        public void Start()
+        {
             initHasAlreadyBeenRecognized();
         }
 
-        public void initHasAlreadyBeenRecognized(){
-            for (int i = 0; i < 10;i++){
-                hasAlreadyBeenRecognized[i]=false;
+        public void initHasAlreadyBeenRecognized()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                hasAlreadyBeenRecognized[i] = false;
             }
-            Debug.Log(" TrackingImageExampleController, Start(): hasAlreadyBeenRecognized Dictionary initialized!" );
+            Debug.Log(
+                " TrackingImageExampleController, Start(): hasAlreadyBeenRecognized Dictionary initialized!"
+            );
         }
 
         /// <summary> Updates this object. </summary>
@@ -57,37 +58,46 @@ namespace NRKernal.NRExamples
             }
 #endif
             // Get updated augmented images for this frame.
-            NRFrame.GetTrackables<NRTrackableImage>(m_TempTrackingImages, NRTrackableQueryFilter.All);
+            NRFrame.GetTrackables<NRTrackableImage>(
+                m_TempTrackingImages,
+                NRTrackableQueryFilter.All
+            );
 
             foreach (var image in m_TempTrackingImages)
             {
-                if(image.GetTrackingState() == TrackingState.Tracking && NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode == TrackableImageFindingMode.ENABLE ){
-                    if(isInPlayMode){ // If we are in play mode, then the image once is recognized and is its turn the counter is incremented.
-                        if(hasAlreadyBeenRecognized[image.GetDataBaseIndex()]==false){
-                            TrackingImageVisualizer visualizer = (TrackingImageVisualizer)Instantiate(TrackingImageVisualizerPrefab, image.GetCenterPose().position, image.GetCenterPose().rotation);
-                            visualizer.Image = image;
-                            visualizer.transform.parent = transform;
-                            //Debug.Log(">>> TrackingImageExampleController, Update(): Created new Visualizer!");
+                if (
+                    image.GetTrackingState() == TrackingState.Tracking
+                    && NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode
+                        == TrackableImageFindingMode.ENABLE
+                )
+                {
+                    if (hasAlreadyBeenRecognized[image.GetDataBaseIndex()] == false)
+                    {
+                        TrackingImageVisualizer visualizer = (TrackingImageVisualizer)Instantiate(
+                            TrackingImageVisualizerPrefab,
+                            image.GetCenterPose().position,
+                            image.GetCenterPose().rotation
+                        );
+                        visualizer.Image = image;
+                        visualizer.transform.parent = transform;
+                        Debug.Log(
+                            ">>> TrackingImageExampleController, Update(): Created new Visualizer!"
+                        );
 
-                            hasAlreadyBeenRecognized[image.GetDataBaseIndex()] = visualizer.incrementCounter();
+                        hasAlreadyBeenRecognized[image.GetDataBaseIndex()] =
+                            visualizer.incrementCounter();
 
-                            Destroy(visualizer.gameObject);
-                            //Debug.Log(">>> TrackingImageExampleController, Update(): in if; Destroyed Visualizer");
-                        }
-                        else{
-                            Debug.Log(">>> TrackingImageExampleController, Update(): Image already recognized!");
-                        }
+                        Destroy(visualizer.gameObject);
+                        Debug.Log(
+                            ">>> TrackingImageExampleController, Update(): in if; Destroyed Visualizer"
+                        );
                     }
-                    else{ // If we are in explore mode, then the image is recognized and proper content shown.
-                        //TrackingImageVisualizer visualizer = (TrackingImageVisualizer)Instantiate(TrackingImageVisualizerPrefab, image.GetCenterPose().position, image.GetCenterPose().rotation);
-                        //visualizer.Image = image;
-                        //visualizer.transform.parent = transform;
-
-                        //visualizer.showContentBasedOnRecognizedImage();
-                        
-                        //Destroy(visualizer.gameObject);
+                    else
+                    {
+                        Debug.Log(
+                            ">>> TrackingImageExampleController, Update(): Image already recognized!"
+                        );
                     }
-
                 }
             }
         }
@@ -98,7 +108,9 @@ namespace NRKernal.NRExamples
             var config = NRSessionManager.Instance.NRSessionBehaviour.SessionConfig;
             config.ImageTrackingMode = TrackableImageFindingMode.ENABLE;
             NRSessionManager.Instance.SetConfiguration(config);
-            Debug.Log(">>> TrackingImageExampleController: Image Tracking enabled through Scan Button");
+            Debug.Log(
+                ">>> TrackingImageExampleController: Image Tracking enabled through Scan Button"
+            );
         }
 
         /// <summary> Disables the image tracking. </summary>
@@ -107,8 +119,9 @@ namespace NRKernal.NRExamples
             var config = NRSessionManager.Instance.NRSessionBehaviour.SessionConfig;
             config.ImageTrackingMode = TrackableImageFindingMode.DISABLE;
             NRSessionManager.Instance.SetConfiguration(config);
-            Debug.Log(">>> TrackingImageExampleController: Image Tracking disabled through 'X' Button of Scanning Mode");
+            Debug.Log(
+                ">>> TrackingImageExampleController: Image Tracking disabled through 'X' Button of Scanning Mode"
+            );
         }
     }
 }
-

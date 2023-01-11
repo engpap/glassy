@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NRKernalSessionConfig
   m_EditorClassIdentifier: 
   PlaneFindingMode: 0
-  ImageTrackingMode: 1
+  ImageTrackingMode: 0
   TrackingImageDatabase: {fileID: 11400000, guid: 2fcd35b0ac6b0ee4aa6d816ebb19f8af, type: 2}
   EnableNotification: 1
   ForceKillWhileGlassSwitchMode: 1
