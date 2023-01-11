@@ -112,7 +112,7 @@ namespace NRKernal
         /// <param name="other"> The other.</param>
         private void OnTriggerEnter(Collider other)
         {
-            HighilightObject(other);
+            //HighilightObject(other);
             NRGrabbableObject grabble = other.GetComponent<NRGrabbableObject>() ?? other.GetComponentInParent<NRGrabbableObject>();
             if (grabble == null)
                 return;
@@ -130,7 +130,7 @@ namespace NRKernal
         /// <param name="other"> The other.</param>
         private void OnTriggerExit(Collider other)
         {   
-            DisableHighilightObject(other);
+            //DisableHighilightObject(other);
             NRGrabbableObject grabble = other.GetComponent<NRGrabbableObject>() ?? other.GetComponentInParent<NRGrabbableObject>();
             if (grabble == null)
                 return;

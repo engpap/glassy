@@ -12,4 +12,9 @@ public class HideContent : MonoBehaviour
             obj.SetActive(hasBeenHidden);
         hasBeenHidden=!hasBeenHidden;
     }
+
+    public void SetActiveObjectsToHide(bool activeValue){
+        foreach(GameObject obj in objectsToHide)
+            obj.SetActive(activeValue);
+    }
 }
