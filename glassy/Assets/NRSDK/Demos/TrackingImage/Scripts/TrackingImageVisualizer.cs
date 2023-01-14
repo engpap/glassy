@@ -12,6 +12,7 @@ public class TrackingImageVisualizer : MonoBehaviour
         public Sprite papavero, salvia, frassino;
         public GameObject principal;
         public GameObject ImageScan,FitToScan;
+        public GameObject PlantButton,HintsButton,Settings,MapButton;
 
         public TrackingImageVisualizer(){
             Debug.Log(">>> TrackingImageVisualizer, Start(): Disabled Image Tracking at start of Visualizer");
@@ -65,10 +66,15 @@ public class TrackingImageVisualizer : MonoBehaviour
             Debug.Log(">>> setInteractable(): Image Tracking disabled!");
  
             FitToScan.SetActive(false);
+            PlantButton.SetActive(true);
+            MapButton.SetActive(true);
+            HintsButton.SetActive(true);
+            Settings.SetActive(true);
             Debug.Log(">>> setInteractable(): FitToScan windows is now disctivated!");
             
             ImageScan.GetComponent<Button>().interactable=true;
             Debug.Log(">>> setInteractable(): Scan Image Button is now interactable again!");
+
        } 
 
         private void DisableImageTracking(){
