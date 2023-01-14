@@ -81,6 +81,7 @@ public class TrackingImageExploreVisualizer : MonoBehaviour
             DisableImageTracking();
 
             fitToScanCanvas.SetActive(false);
+            
             exploreCanvas.SetActive(true);
             hideButton.SetActive(true);
 
