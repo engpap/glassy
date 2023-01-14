@@ -21,8 +21,8 @@ public class PlayScript : MonoBehaviour
     public Button countPlant;
     public TMP_Text buttonText;
     public Image image;
-    public Sprite iris, salvia, frassino, weepingwillow,papavero;
-    Coordinate[] coordinate={new Coordinate(),new Coordinate(),new Coordinate(),new Coordinate(),new Coordinate()};
+    public Sprite papavero, salvia, frassino;
+    Coordinate[] coordinate={new Coordinate(),new Coordinate(),new Coordinate()};
     
     // Start is called before the first frame update
     void Start()
@@ -30,24 +30,19 @@ public class PlayScript : MonoBehaviour
         HintPinPosition=false;
         Instance=this;
         DontDestroyOnLoad(gameObject);
+        //CAMBIARE LE COORDINATE PER L'ESAME (AULA ALARIO)
         coordinate[0].latitude=45.484835f;   //SALVIA RUSSA
         coordinate[0].longitude=9.193702f;
         coordinate[1].latitude=45.483627f;   //PAPAVERO
         coordinate[1].longitude=9.193029f;
         coordinate[2].latitude=45.484827f;   //FRASSINO
         coordinate[2].longitude=9.192582f;
-        coordinate[3].latitude=45.484531f;   //SALICE PIANGENTE 
-        coordinate[3].longitude=9.191907f;
-        coordinate[4].latitude=45.484933f;   //IRIS SIBIRICA
-        coordinate[4].longitude=9.193889f;
         image.sprite=salvia;
         count=0;
     }
 
     public void UpdateCount(){
         //when you find a plant the counter in the upper left will be increased 
-
-        
         FindObject(this,"Quad1_black").SetActive(false);
         FindObject(this,"Quad1_red").SetActive(false);
         FindObject(this,"Quad2_black").SetActive(false);
@@ -57,8 +52,6 @@ public class PlayScript : MonoBehaviour
         FindObject(this,"Quad4_black").SetActive(false);
         FindObject(this,"Quad4_red").SetActive(false);
         HintPinPosition=false;
-
-        
         GameObject panelRedArea=FindObject(this,"panel_hint3");
         Button button3=panelRedArea.GetComponent<Button>();
         button3.interactable=true;
@@ -69,12 +62,11 @@ public class PlayScript : MonoBehaviour
         Button button1=panelBlackArea.GetComponent<Button>();
         button1.interactable=true;
         
-        if(count<5){
+        if(count<2){
             count++;
             //change image on the plant to find box.
-            if(count<4)
-                FindObject(this,"PlantFound").SetActive(true);
-            buttonText.text = "Plant Found: "+count+"/5";
+            FindObject(this,"PlantFound").SetActive(true);
+            buttonText.text = "Plant Found: "+count+"/3";
             switch (count)
             {
                 case 1:
@@ -82,12 +74,6 @@ public class PlayScript : MonoBehaviour
                     break;
                 case 2:
                     image.sprite=frassino;
-                    break;
-                case 3:
-                    image.sprite=weepingwillow;
-                    break;
-                case 4:
-                    image.sprite=iris;
                     break;
                 default:
                     break;

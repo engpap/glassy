@@ -9,7 +9,7 @@ public class TrackingImageVisualizer : MonoBehaviour
         public NRTrackableImage Image;
         public GameObject CountPlant;
         public Image ImageToFind;
-        public Sprite iris, salvia, frassino, weepingwillow,papavero;
+        public Sprite papavero, salvia, frassino;
         public GameObject principal;
         public GameObject ImageScan,FitToScan;
 
@@ -22,7 +22,6 @@ public class TrackingImageVisualizer : MonoBehaviour
         public bool incrementCounter(){
             Debug.Log(">>> incrementCounter(): This method has been called!");
             if(Image!=null){
-
                 Debug.Log(">>> incrementCounter(): index: "+Image.GetDataBaseIndex());
                 if((Image.GetDataBaseIndex()==0) && (ImageToFind.sprite==salvia)){
                     //Debug.Log(">>> Index 0, State of Image Tracking: "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
@@ -44,24 +43,8 @@ public class TrackingImageVisualizer : MonoBehaviour
                     Debug.Log(">>> Recognized Frassino image, database index 2 ");
                     //Debug.Log(">>> Index 2, State of Image Tracking: "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
                     return true;
-                }
-                else if((Image.GetDataBaseIndex()==3) && (ImageToFind.sprite==weepingwillow)) {
-                    //Debug.Log(">>> Index 3, State of Image Tracking: "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
-                    setInteractable();
-                    Debug.Log(">>> Recognized Weeping Willow image, database index 3 ");
-                    //Debug.Log(">>> Index 3, State of Image Tracking: "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
-                    return true;
-                }
-                else if((Image.GetDataBaseIndex()==4) && (ImageToFind.sprite==iris)) {
-                    //Debug.Log(">>> Index 4, State of Image Tracking: "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
-                    setInteractable();
-                    Debug.Log(">>> Recognized Iris image, database index 4 ");
-                    //Debug.Log(">>> Index 4, State of Image Tracking: "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
-                    return true;
                 } 
                 else{
-                    Debug.Log(">>> Recognized wrong plant! You have to recognize: "+ImageToFind.sprite.ToString());
-                    //Debug.Log(">>> State of Image Tracking: "+NRSessionManager.Instance.NRSessionBehaviour.SessionConfig.ImageTrackingMode);
                     return false;
                 }
             }else{
