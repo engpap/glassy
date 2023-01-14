@@ -2020,6 +2020,7 @@ MonoBehaviour:
   fitToScanCanvas: {fileID: 1909152}
   exploreCanvas: {fileID: 1546282906}
   hideButton: {fileID: 26978456}
+  GrabbableItemsParentObject: {fileID: 557590372}
   DetailsObjects:
   - {fileID: 292574240}
   - {fileID: 1648462054}
