@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1984,7 +1984,7 @@ GameObject:
   - component: {fileID: 434608733}
   - component: {fileID: 434608734}
   m_Layer: 0
-  m_Name: TrackingImageVisualizer
+  m_Name: ExploreTrackingImageVisualizer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2014,7 +2014,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 434608731}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90276d9a7be0aa5408e720b8a75698be, type: 3}
+  m_Script: {fileID: 11500000, guid: 8cc383096ca78084ab86435a61b3e624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fitToScanCanvas: {fileID: 1909152}
@@ -5320,7 +5320,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956276364}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0.8}
   m_LocalScale: {x: 0.0005, y: 0.0005, z: 0.0005}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5767,7 +5767,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1487729730}
-        m_TargetAssemblyTypeName: NRKernal.NRExamples.TrackingImageExploreController,
+        m_TargetAssemblyTypeName: NRKernal.NRExamples.ExploreTrackingImageController,
           NRSDK
         m_MethodName: EnableImageTracking
         m_Mode: 1
@@ -6992,7 +6992,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114081229381263068, guid: 8e406d825c1f87d49912e1f33f727778, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: NRKernal.NRExamples.TrackingImageExploreController, NRSDK
+      value: NRKernal.NRExamples.TrackingImageController, NRSDK
       objectReference: {fileID: 0}
     - target: {fileID: 114081229381263068, guid: 8e406d825c1f87d49912e1f33f727778, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
@@ -8782,7 +8782,7 @@ GameObject:
   - component: {fileID: 1487729729}
   - component: {fileID: 1487729730}
   m_Layer: 0
-  m_Name: ImageTrackingExploreController
+  m_Name: ExploreImageTrackingController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8812,10 +8812,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1487729727}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4147dd6ca0ed9a24e9f1521c87c8479d, type: 3}
+  m_Script: {fileID: 11500000, guid: 37f4c75801b142a46b35172294d4b48d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TrackingImageExploreVisualizerPrefab: {fileID: 434608734}
+  TrackingImageVisualizerPrefab: {fileID: 434608734}
 --- !u!1 &1539580290
 GameObject:
   m_ObjectHideFlags: 0
@@ -9095,7 +9095,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -561, y: 172.00005}
+  m_AnchoredPosition: {x: -561, y: 172.00003}
   m_SizeDelta: {x: 400, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1648462056

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2615,27 +2615,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 297916961}
-  - component: {fileID: 297916960}
+  - component: {fileID: 297916962}
   m_Layer: 0
-  m_Name: ControllerImageTracking
+  m_Name: GameTrackingImageController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &297916960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 297916959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 492cc0813c4064ed79f2671a7c2633fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TrackingImageVisualizerPrefab: {fileID: 707239279}
 --- !u!4 &297916961
 Transform:
   m_ObjectHideFlags: 0
@@ -2651,6 +2638,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &297916962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297916959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5abac14d8083b4b910607e980815cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrackingImageVisualizerPrefab: {fileID: 707239281}
 --- !u!1001 &313831813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3530,7 +3530,7 @@ PrefabInstance:
     - target: {fileID: 114801670993874940, guid: fadada887bc7b3946bff1496ea5561c3, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 297916960}
+      objectReference: {fileID: 0}
     - target: {fileID: 114801670993874940, guid: fadada887bc7b3946bff1496ea5561c3, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -4908,38 +4908,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 707239280}
-  - component: {fileID: 707239279}
+  - component: {fileID: 707239281}
   m_Layer: 0
-  m_Name: TrackingImageVisualizer
+  m_Name: GameTrackingImageVisualizer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &707239279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 707239278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 655793353707240a195aee929b80d41a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CountPlant: {fileID: 1144567119}
-  ImageToFind: {fileID: 1507748066}
-  papavero: {fileID: 21300000, guid: 7111d386961723b49bd5cf6ce2b497ec, type: 3}
-  salvia: {fileID: 21300000, guid: 90a3a363177bd0c4d958d8ee766acc29, type: 3}
-  frassino: {fileID: 21300000, guid: 83de1cee767aaf14aa5f746c116db7eb, type: 3}
-  principal: {fileID: 124388764}
-  ImageScan: {fileID: 960977914}
-  FitToScan: {fileID: 2126280460}
-  PlantButton: {fileID: 1511373724}
-  HintsButton: {fileID: 994883664}
-  Settings: {fileID: 1418376119}
-  MapButton: {fileID: 353498170}
 --- !u!4 &707239280
 Transform:
   m_ObjectHideFlags: 0
@@ -4955,6 +4931,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &707239281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707239278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 795b38d9e9ce8e74c9047dc3f43bf181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CountPlant: {fileID: 1144567119}
+  ImageToFind: {fileID: 1507748066}
+  papavero: {fileID: 21300000, guid: 7111d386961723b49bd5cf6ce2b497ec, type: 3}
+  salvia: {fileID: 21300000, guid: 90a3a363177bd0c4d958d8ee766acc29, type: 3}
+  frassino: {fileID: 21300000, guid: 83de1cee767aaf14aa5f746c116db7eb, type: 3}
+  principal: {fileID: 124388764}
+  ImageScan: {fileID: 960977914}
+  FitToScan: {fileID: 2126280460}
+  PlantButton: {fileID: 1511373724}
+  HintsButton: {fileID: 994883664}
+  Settings: {fileID: 1418376119}
+  MapButton: {fileID: 353498170}
 --- !u!224 &716725111 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224295691893135368, guid: 8e406d825c1f87d49912e1f33f727778, type: 3}
@@ -9206,7 +9206,7 @@ PrefabInstance:
     - target: {fileID: 114801670993874940, guid: fadada887bc7b3946bff1496ea5561c3, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 297916960}
+      objectReference: {fileID: 297916962}
     - target: {fileID: 114801670993874940, guid: fadada887bc7b3946bff1496ea5561c3, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -9277,7 +9277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114801670993874940, guid: fadada887bc7b3946bff1496ea5561c3, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: NRKernal.NRExamples.TrackingImageExampleController, NRSDK
+      value: NRKernal.NRExamples.TrackingImageController, NRSDK
       objectReference: {fileID: 0}
     - target: {fileID: 114801670993874940, guid: fadada887bc7b3946bff1496ea5561c3, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -13880,7 +13880,7 @@ PrefabInstance:
     - target: {fileID: 114081229381263068, guid: 8e406d825c1f87d49912e1f33f727778, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 297916960}
+      objectReference: {fileID: 297916962}
     - target: {fileID: 114081229381263068, guid: 8e406d825c1f87d49912e1f33f727778, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -13963,7 +13963,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114081229381263068, guid: 8e406d825c1f87d49912e1f33f727778, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: NRKernal.NRExamples.TrackingImageExampleController, NRSDK
+      value: NRKernal.NRExamples.TrackingImageController, NRSDK
       objectReference: {fileID: 0}
     - target: {fileID: 114081229381263068, guid: 8e406d825c1f87d49912e1f33f727778, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
