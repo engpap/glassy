@@ -58,7 +58,6 @@ public class utility : MonoBehaviour
 
     }
 
-
     public void onClickOptionExploreMode(){
         GameObject tutorial=principal.transform.Find("Tutorial").gameObject;
         GameObject explore=principal.transform.Find("Explore").gameObject;
