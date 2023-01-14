@@ -9,6 +9,7 @@ public class ExploreTrackingImageVisualizer : TrackingImageVisualizer
     public GameObject fitToScanCanvas;
     public GameObject exploreCanvas;
     public GameObject hideButton;
+    public GameObject GrabbableItemsParentObject;
 
     public GameObject[] DetailsObjects;
     public Sprite[] LavanderDetailsSprites;
@@ -83,6 +84,7 @@ public class ExploreTrackingImageVisualizer : TrackingImageVisualizer
 
         exploreCanvas.SetActive(true);
         hideButton.SetActive(true);
+        GrabbableItemsParentObject.SetActive(true);
 
         // Set Details //TODO: refactor with loop on length
         DetailsObjects[0].GetComponent<Image>().sprite = PlantDetailsSprites[0];
