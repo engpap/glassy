@@ -8,33 +8,39 @@ public class utility : MonoBehaviour
     public GameObject principal;
     private bool flagTutorial;
     private bool flagTutorialExploreMode;
+    private bool flagExploreSectionExploreMode;
     public GameObject items;
     
     public void returnFromOptionExploreMode(){
+        Debug.Log("Tutorial flag on return: "+flagTutorialExploreMode);
+        GameObject tutorial = principal.transform.Find("Tutorial").gameObject;
+        GameObject explore=principal.transform.Find("Explore").gameObject;
          if(flagTutorialExploreMode)
         {
-            GameObject tutorial = principal.transform.Find("Tutorial").gameObject;
             tutorial.SetActive(true);
         }
         else
         {
-            GameObject explore=principal.transform.Find("Explore").gameObject;
-            explore.SetActive(true);
-            items.SetActive(true);
-            
+            if(flagExploreSectionExploreMode){
+                explore.SetActive(true);
+                items.SetActive(true);  
+            }
+            else{
+                explore.SetActive(false);
+                items.SetActive(false);  
+            }
         }
     }
     //PlayMode
     public void returnFromOption(){
-        
+        GameObject tutorial=principal.transform.Find("Canvas_Tutorial").gameObject;
+        GameObject playmode=principal.transform.Find("PlayModeView").gameObject;
         if(flagTutorial)
         {
-            GameObject tutorial = principal.transform.Find("Canvas_Tutorial").gameObject;
             tutorial.SetActive(true);
         }
         else
         {
-            GameObject playmode=principal.transform.Find("PlayModeView").gameObject;
             playmode.SetActive(true);
         }
 
@@ -42,28 +48,32 @@ public class utility : MonoBehaviour
     //PlayMode
     public void onClickOption(){
         GameObject tutorial=principal.transform.Find("Canvas_Tutorial").gameObject;
+        GameObject playmode=principal.transform.Find("PlayModeView").gameObject;
         if(tutorial.activeSelf)
-            {
-                flagTutorial=true;
-                tutorial.SetActive(false);
-            }
+            flagTutorial=true;
         else
             flagTutorial=false;
-            
+        tutorial.SetActive(false);
+        playmode.SetActive(false);
 
     }
+
 
     public void onClickOptionExploreMode(){
         GameObject tutorial=principal.transform.Find("Tutorial").gameObject;
-        if(!tutorial.activeSelf)
-            flagTutorialExploreMode=false;
+        GameObject explore=principal.transform.Find("Explore").gameObject;
+        if(tutorial.activeSelf)
+            flagTutorialExploreMode=true;
         else
-            {
-                flagTutorialExploreMode=true;
-                tutorial.SetActive(false);
-            }
-
+            flagTutorialExploreMode=false;
+        if(explore.activeSelf)
+            flagExploreSectionExploreMode=true;
+        else
+            flagExploreSectionExploreMode=false;
+        explore.SetActive(false);    
+        tutorial.SetActive(false);  
+        items.SetActive(false);  
+        Debug.Log("flagExplore: "+flagTutorialExploreMode);
     }
-
    
 }

@@ -162,6 +162,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 20880588574554076, guid: 665d8158924bd2648a94fb3f87691bbb, type: 3}
+      propertyPath: near clip plane
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 114130057724730698, guid: 665d8158924bd2648a94fb3f87691bbb, type: 3}
       propertyPath: enableTriggerProfiler
       value: 1

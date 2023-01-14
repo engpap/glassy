@@ -1464,23 +1464,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224288473969420072, guid: 3bb24ffafbe18eb4cba393ca2102adfa, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224288473969420072, guid: 3bb24ffafbe18eb4cba393ca2102adfa, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224288473969420072, guid: 3bb24ffafbe18eb4cba393ca2102adfa, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224573102254846950, guid: 3bb24ffafbe18eb4cba393ca2102adfa, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224573102254846950, guid: 3bb24ffafbe18eb4cba393ca2102adfa, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224853003228392580, guid: 3bb24ffafbe18eb4cba393ca2102adfa, type: 3}
       propertyPath: m_Pivot.x
@@ -3089,6 +3089,10 @@ PrefabInstance:
       value: 26.991467
       objectReference: {fileID: 0}
     - target: {fileID: 20880588574554076, guid: 665d8158924bd2648a94fb3f87691bbb, type: 3}
+      propertyPath: near clip plane
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 20880588574554076, guid: 665d8158924bd2648a94fb3f87691bbb, type: 3}
       propertyPath: m_projectionMatrixMode
       value: 1
       objectReference: {fileID: 0}
@@ -4080,7 +4084,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114801670993874940, guid: fadada887bc7b3946bff1496ea5561c3, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114801670993874940, guid: fadada887bc7b3946bff1496ea5561c3, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -4089,7 +4093,7 @@ PrefabInstance:
     - target: {fileID: 114801670993874940, guid: fadada887bc7b3946bff1496ea5561c3, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1894690303}
+      objectReference: {fileID: 1418376121}
     - target: {fileID: 114801670993874940, guid: fadada887bc7b3946bff1496ea5561c3, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -4097,7 +4101,7 @@ PrefabInstance:
     - target: {fileID: 114801670993874940, guid: fadada887bc7b3946bff1496ea5561c3, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 1614710637}
+      objectReference: {fileID: 0}
     - target: {fileID: 114801670993874940, guid: fadada887bc7b3946bff1496ea5561c3, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -4128,7 +4132,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114801670993874940, guid: fadada887bc7b3946bff1496ea5561c3, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: SetActive
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114801670993874940, guid: fadada887bc7b3946bff1496ea5561c3, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -4176,7 +4180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114801670993874940, guid: fadada887bc7b3946bff1496ea5561c3, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 224383723183572354, guid: fadada887bc7b3946bff1496ea5561c3, type: 3}
       propertyPath: m_Pivot.x
@@ -8708,7 +8712,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1350461719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9571,18 +9575,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: HintsScript, Assembly-CSharp
         m_MethodName: showHints
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1630046166}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10685,7 +10677,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1630046167
 MonoBehaviour:
   m_ObjectHideFlags: 0
