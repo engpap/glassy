@@ -46,7 +46,7 @@ public class TrackingImageExploreVisualizer : MonoBehaviour
        
 
         /* USE THIS IN REAL ENVIORMENT, WHEN YOU HAVE GLASSES*/
-
+        
         public bool showContentBasedOnRecognizedImage(){
             Debug.Log(">>> ShowContentBasedOnRecognizedImage:");
             if(Image!=null){
@@ -75,6 +75,7 @@ public class TrackingImageExploreVisualizer : MonoBehaviour
             }
 
         }
+    
         private void showContentOfPlant(string plantName, Sprite[] PlantDetailsSprites, Sprite[] PlantHealthSprites){
             
             // Image Tracking is disabled since we have recongnized the plant, se we now want to only display content of the plant

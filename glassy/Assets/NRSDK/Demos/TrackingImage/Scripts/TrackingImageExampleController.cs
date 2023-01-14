@@ -33,6 +33,7 @@ namespace NRKernal.NRExamples
 
         public void Start()
         {
+            Debug.Log("Start Example Controller");
             initHasAlreadyBeenRecognized();
         }
 

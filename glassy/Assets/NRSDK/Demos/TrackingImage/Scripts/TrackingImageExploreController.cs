@@ -30,6 +30,8 @@ namespace NRKernal.NRExamples
 
         public void Start()
         {
+            Debug.Log("Start Explore Controller");
+            initImageTrackingSession();
             initHasAlreadyBeenRecognized();
         }
 
@@ -55,10 +57,11 @@ namespace NRKernal.NRExamples
                     flag=!flag;
                 }
             }
-    */
-
+    
+*/
         /* USE THIS IN REAL ENVIORMENT, WHEN YOU HAVE GLASSES*/
         /// <summary> Updates this object. </summary>
+
         public void Update()
         {
 #if !UNITY_EDITOR
@@ -105,12 +108,12 @@ namespace NRKernal.NRExamples
                     }
                 }
             }
-            
         }
 
         /// <summary> Enables the image tracking. </summary>
         public void EnableImageTracking()
         {
+            initImageTrackingSession();
             var config = NRSessionManager.Instance.NRSessionBehaviour.SessionConfig;
             config.ImageTrackingMode = TrackableImageFindingMode.ENABLE;
             NRSessionManager.Instance.SetConfiguration(config);
@@ -127,6 +130,28 @@ namespace NRKernal.NRExamples
             NRSessionManager.Instance.SetConfiguration(config);
             Debug.Log(
                 ">>> TrackingImageExampleController: Image Tracking disabled through 'X' Button of Scanning Mode"
+            );
+        }
+
+        public void initImageTrackingSession()
+        {
+            // Get trackable images just for logging
+            NRFrame.GetTrackables<NRTrackableImage>(
+                m_TempTrackingImages,
+                NRTrackableQueryFilter.All
+            );
+            Debug.Log(
+                "Recognized images before init: " + m_TempTrackingImages.Count
+            );
+            NRSessionManager.Instance.InstantiateNewTrackableFactory();
+
+            // Get trackable images just for logging
+            NRFrame.GetTrackables<NRTrackableImage>(
+                m_TempTrackingImages,
+                NRTrackableQueryFilter.All
+            );
+            Debug.Log(
+                "Recognized images after init: " + m_TempTrackingImages.Count
             );
         }
     }
