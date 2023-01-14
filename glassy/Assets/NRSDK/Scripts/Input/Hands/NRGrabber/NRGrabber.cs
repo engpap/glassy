@@ -90,8 +90,10 @@ namespace NRKernal
             // Check if the materials array has at least one element.
             if (materials.Length > 0)
             {
-                // The materials array has at least one element, so we can change the first material.
-                materials[0] = material;
+                for(int i = 0; i < materials.Length; i++){
+                    // The materials array has at least one element, so we can change the first material.
+                    materials[i] = material;
+                }
                 // Assign the modified materials array back to the object's renderer.
                 other.GetComponent<MeshRenderer>().materials = materials;
             }
@@ -102,7 +104,6 @@ namespace NRKernal
          private void DisableHighilightObject(Collider other){
             Debug.Log(">>> DisableHighilightObject");
             other.GetComponent<MeshRenderer>().materials=this.originalMaterials;
-
         }
 
 
