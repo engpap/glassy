@@ -26,14 +26,6 @@ public class ExploreTrackingImageVisualizer : TrackingImageVisualizer
     public Sprite[] LotusHealthSprites;
     public GameObject[] HealthGrabbableItems;
 
-    //TO USE ONLY WHEN GLASSES ARE NOT PRESENT, ONLY ON UNITY
-    /*
-    public void showContentBasedOnRecognizedImage(){
-     showContentOfPlant("Lavander",LavanderDetailsSprites,LavanderHealthSprites);
-    }*/
-
-
-    /* USE THIS IN REAL ENVIORMENT, WHEN YOU HAVE GLASSES*/
 
     public void showContentBasedOnRecognizedImage()
     {

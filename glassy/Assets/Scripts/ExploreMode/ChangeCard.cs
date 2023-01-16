@@ -25,7 +25,6 @@ public class ChangeCard : MonoBehaviour
     private bool hasHealthButtonClicked = false;
     public GameObject HealthPanel;
     public GameObject HealthObjects;
-    // TODO: similar to Evolution
 
     // Common button for Evolution and Health sections
     public Button ResetItemsButton; // Reset the position of 3D objects
@@ -86,7 +85,6 @@ public class ChangeCard : MonoBehaviour
             setActive_ResetItemsButton(hasHealthButtonClicked);
             setActive_EvolutionFunctionality(false);
             setActive_DetailsFunctionality(false);
-            //TODO: similar to Evolutionx
         }
     }
 

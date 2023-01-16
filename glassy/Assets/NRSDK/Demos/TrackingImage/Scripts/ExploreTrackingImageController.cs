@@ -13,20 +13,6 @@ namespace NRKernal.NRExamples
             base.initImageTrackingSession();
         }
 
-        //FOR TESTING WITHOUT GLASSES; TO REMOVE when not needed anymore.
-        /*
-            private bool flag = true;
-            public void Update(){
-                if(flag){
-                    TrackingImageExploreVisualizer visualizer = (TrackingImageExploreVisualizer)Instantiate(TrackingImageExploreVisualizerPrefab);
-                    visualizer.showContentBasedOnRecognizedImage();
-                    Debug.Log(">>> TrackingImageExploreController: Visualizer created and called method ");
-                    flag=!flag;
-                }
-            }
-    
-    */
-        /* USE THIS IN REAL ENVIORMENT, WHEN YOU HAVE GLASSES*/
         /// <summary> Updates this object. </summary>
 
         public void Update()
