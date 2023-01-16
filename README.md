@@ -10,7 +10,7 @@ Eventually, the visiting experience is improved.
 
 
 ## Team
-Giuseppe Bonanno - Computer Science and Engineering 
-Weiyu Li - Digital and Interaction Design 
-Andrea Paparella - Computer Science and Engineering 
-Matteo Sartori - Music and Acoustic Engineering 
+* Giuseppe Bonanno - Computer Science and Engineering 
+* Weiyu Li - Digital and Interaction Design 
+* Andrea Paparella - Computer Science and Engineering 
+* Matteo Sartori - Music and Acoustic Engineering 
