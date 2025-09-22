@@ -3,6 +3,10 @@
 ## Project specification
 Botanical gardens and open-air museums often experience a lack of interest. Despite the growing environmental concerns, the majority of people are less attracted by these spaces compared to history and science museums. We aim to tackle this issue by creating Glassy, an augmented reality software for enhancing the digital-and-physical experience in botanical gardens through the use of nReal glasses. The application allows users to move in an augmented reality space simply by walking around the museum and by using hand gestures to get relevant information about plants, flowers, and trees. Virtual and interactable objects are displayed next to plants providing general details, over-time evolution, and usages in medicine. Eventually, the visiting experience is improved.
 
+## Project Materials
+- [Design Document](https://drive.google.com/file/d/1uaZxm9vWWz0vOpnbNpIDI-w6a04c14mt/view?usp=sharing)  
+- [Presentation](https://drive.google.com/file/d/1DZ-fQevwZW1BHOhFHzFmCLlUYoxmoFCc/view?usp=sharing)  
+- [Video Demonstration](https://drive.google.com/file/d/1tDYGAF8Mtnj3M9vPIPRZ9N-luxnVBeYO/view?usp=sharing) 
 
 ## Team
 * Giuseppe Bonanno - Computer Science and Engineering 
